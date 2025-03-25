@@ -37,6 +37,14 @@ h1 {
     font-size: 1em;
 }
 
+svg.bi {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    vertical-align: -.125em;
+    display: inline-block;
+}
+
 .logo {
     max-width: 100px;
 }
@@ -70,6 +78,24 @@ h1 {
 .side-img {
     /* reduce saturation */
     filter: grayscale(50%) contrast(1.0);
+}
+
+.star {
+    background-size: 14px 14px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABiElEQVR4Ae1WJVA+cRBdXNPf3YVExp1eaEgf3Im4RQrukEi43s2XcIdGx92dZRfn+NzQN/POVt7PdufgBfJw2GWewQRjYLfD+uehYI7MPdHqtzFml8BiZxTN48HQIKFeIl6wBwwJFOEziZzcEDxBGXwBQ+FAtAhnoZs8ECzCDLmcolSQ9lEAQwAFeE0Ch0SU8IiW9Y3mo+80d6XRJikiLV0lC8gj25TFko+zvOUaJqKBOCKvvrzIMGsAMc7pDfKArfCWhBv0KNaO7fARVOGoyyyEnLd0ENqlfY1CBBNQF/sdlg5a7atoPrkvWDqCNqAltqKR1qgrxr4cA7rgSDArU1eQfEtBF6AMzCnRogZLusQxurQyfyJqSD/QFnRaCxQknWLKs3EMaANMAVNKMHPnYHRZVNOy2WMP2NB7nhzROawDM216q6ck0QYdiiA5hyqAbKuS0vAATSEZ/YCy/xe2sc8N/zzQFFRTtRR4QszFIbAAFWAf9uUYiq3SpiSsd2XwQ5u/Oo6FZ4tT4mLYm81lTkgAAAAASUVORK5CYII=);
+    height: 14px;
+    width: 14px;
+    vertical-align: top;
+    margin-top: 3px;
+    display: inline-block;
+}
+.rating {
+    color: #5e5e5e;
+    display: inline-block;
+}
+a.contact-google-card {
+    text-decoration: none;
+    color: inherit;
 }
 
 @media (max-width: 520px) {

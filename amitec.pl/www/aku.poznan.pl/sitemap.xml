@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://shendao.poznan.pl/</loc>
+        <lastmod>2025-03-18T10:45:23+01:00</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://shendao.poznan.pl/en/</loc>
+        <lastmod>2025-03-01T09:20:23+01:00</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shendao.poznan.pl/akupunktura-lubon/</loc>
+        <lastmod>2025-03-13T17:20:23+01:00</lastmod>
+        <priority>0.5</priority>
+    </url>
+</urlset>
