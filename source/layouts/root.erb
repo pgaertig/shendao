@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShenDao - Akupunktura - Poznań | Magdalena Gaertig</title>
+  <meta name="description" content="Gabinet akupunktury w Poznaniu. Akupunktura we wspomaganiu leczenia migren, bólu głowy, stresu, problemów ginekologicznych, hormonalnych, trawienych, skórnych, alergii, problemów z układem moczowym, bólu mięśni, stawów, problemów z blizną po operacji."/>
+  <meta name="keywords" content="akupunktura, poznań, migrena, ból głowy, stres, ginekologia, hormonalne, trawienie, skóra, alergie, układ moczowy, mięśnie, stawy, blizna, operacja, Poznań, Wilda"/>
+  <meta name="author" content="ShenDao"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="og:site_name" content="ShenDao Akupunktura Poznań" />
+  <meta name="og:image" content="https://shendao.poznan.pl/img/shendao-icon256.png" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/style2025.css?7"/>
+  <link rel="icon" type="image/png" href="/img/shendao-icon256.png">
+  <!--link rel="icon" type="image/svg+xml" href="/logo2.svg"-->
+  <meta name="geo.region" content="PL-WP" />
+  <meta name="geo.placename" content="Poznań" />
+  <link rel="canonical" href="https://shendao.poznan.pl/" />
+
+  <link rel="preload" href="/aku2.webp" as="image" />
+  <link rel="preload" href="/logo2.svg" as="image" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WL49ZGYL9"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9WL49ZGYL9');
+      function gtag_report_conversion(url) {
+          var callback = function () {
+              if (typeof(url) != 'undefined') {
+                  window.location = url;
+              }
+          };
+          gtag('event', 'conversion', {
+              'send_to': ['AW-1041470776/35tWCJiVxoIaELiqzvAD'],
+              'event_callback': callback
+          });
+          return false;
+      }
+      function gtag_report_contact_view() {
+          gtag('event', 'contact_view', {
+              'send_to': ['G-9WL49ZGYL9']
+          });
+          return false;
+      }
+  </script>
+  <!-- simplelightbox -->
+  <script defer="defer" src="js/simple-lightbox.min.js"></script>
+  <link href="css/simple-lightbox.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <meta name="msvalidate.01" content="BAE6F0B9DCF9B33F7179E04863392158" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ShenDao Akupunktura - Poznań",
+      "image": "https://shendao.poznan.pl/img/shendao-icon256.png",
+      "@id": "",
+      "url": "https://shendao.poznan.pl",
+      "telephone": "+48600704120",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bergera 1a",
+        "addressLocality": "Poznań",
+        "postalCode": "61-542",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.39338936265885,
+        "longitude": 16.918169484487393
+      }
+    }
+  </script>
+</head>
+<body>
+<%= yield %>
+</body>
+
+<script defer="defer">
+    document.addEventListener("DOMContentLoaded", function() { //runs after defer scripts are loaded
+        var lightbox = new SimpleLightbox('.gal-1 a', { /* options */ });
+    });
+
+    document.addEventListener("click", function(event) {
+        if (event.target.classList.contains("toggler")) {
+            document.getElementById("navbarNav").classList.toggle("show");
+        } else if (event.target.classList.contains("nav-link")) {
+            document.getElementById("navbarNav").classList.remove("show");
+        } else if (event.target.classList.contains("logo")) {
+            document.getElementById("navbarNav").classList.remove("show");
+        }
+    });
+
+    // gtag with href value as param if gtag method is available
+    if (typeof gtag === 'function') {
+        document.querySelectorAll('.gtag').forEach((el) => {
+            el.addEventListener('click', () => {
+                try{
+                    //get id of element
+                    fetch('/touch.json?a=' + el.id);
+                    return gtag_report_conversion(el.href);
+                } catch (e) {
+                    console.error('gtag', e);
+                }
+            });
+        });
+        console.log('gtag installed');
+    } else {
+        console.log('gtag not available');
+    }
+
+    /** Send request to server /contact when user viewport shows contact, do it once then detach the handler, all in try/catch to not interrupt user flow.
+     * Generate number and keep localStorage then append that number to touch.json param "n=number". Use number from localStorage if exists.
+     * */
+    try {
+        const contact = document.getElementById('contact');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    observer.disconnect();
+                    const n = localStorage.getItem('touch') || Math.floor(Math.random() * 1000000);
+                    localStorage.setItem('touch', n);
+                    fetch('/touch.json?n=' + n);
+                    try {
+                        gtag_report_contact_view();
+                    } catch (e) {
+                        console.error('gtag', e);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(contact);
+    } catch (e) {
+        console.error('Touch', e);
+    }
+
+</script>
+</html>

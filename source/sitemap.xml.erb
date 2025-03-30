@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <% sitemap.resources.select { |page| page.destination_path =~ /\.html/ && page.data.noindex != true }.each do |page| %>
+    <url>
+      <loc><%= page.url %></loc>
+      <% last_mod = if page.path.start_with?('blog/')
+                      File.mtime(page.source_file).to_time
+                    else
+                      Time.now
+                    end %>
+      <lastmod><%= last_mod.iso8601 %></lastmod>
+      <changefreq><%= page.data.changefreq || "weekly" %></changefreq>
+      <priority><%= page.data.priority || "0.5" %></priority>
+    </url>
+  <% end %>
+</urlset>

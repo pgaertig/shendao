@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://shendao.poznan.pl/</loc>
-        <lastmod>2025-03-18T10:45:23+01:00</lastmod>
-        <priority>1.0</priority>
+      <loc>/</loc>
+      <lastmod>2025-03-30T18:21:16+02:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1</priority>
     </url>
     <url>
-        <loc>https://shendao.poznan.pl/en/</loc>
-        <lastmod>2025-03-01T09:20:23+01:00</lastmod>
-        <priority>0.8</priority>
+      <loc>/akupunktura-lubon/</loc>
+      <lastmod>2025-03-30T18:21:16+02:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://shendao.poznan.pl/akupunktura-lubon/</loc>
-        <lastmod>2025-03-13T17:20:23+01:00</lastmod>
-        <priority>0.5</priority>
+      <loc>/en/</loc>
+      <lastmod>2025-03-30T18:21:16+02:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/blog/akupunktura-na-jelito-drazliwe-ibs.html</loc>
+      <lastmod>2025-03-27T11:38:28+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/blog/akupunktura-na-zatoki.html</loc>
+      <lastmod>2025-03-26T22:48:12+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/blog/akupunktura-na-stres-i-bezsennosc.html</loc>
+      <lastmod>2025-03-27T11:38:07+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/blog/</loc>
+      <lastmod>2025-03-26T21:41:10+01:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
     </url>
 </urlset>

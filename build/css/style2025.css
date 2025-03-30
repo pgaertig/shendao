@@ -1,5 +1,10 @@
+:root {
+    --bs-primary-rgb: 117, 69, 26;
+}
+
+
 .btn-primary {
-    --bs-btn-bg: #75451a; /* Replace with your desired primary color */
+    --bs-btn-bg: #75451a;
     --bs-btn-border-color: #d19c68; /* Replace with your desired primary color */
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #569aa5;
@@ -9,6 +14,7 @@
     --bs-btn-active-bg: #68317e;
     --bs-btn-active-border-color: #612e76;
 }
+
 
 body {
     /*font-family: Arial, sans-serif;*/
@@ -22,7 +28,8 @@ html {
 }
 
 .fixed-top {
-    backdrop-filter: blur(5px); /* Adjust the blur value as needed */
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px); /* Adjust the blur value as needed */
     background-color: rgba(255, 255, 255, 0.7); /* Optional: Add a semi-transparent background color */
 }
 
@@ -72,12 +79,14 @@ svg.bi {
 .gali {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .side-img {
     /* reduce saturation */
-    filter: grayscale(50%) contrast(1.0);
+    -webkit-filter: grayscale(50%) contrast(1.0);
+            filter: grayscale(50%) contrast(1.0);
 }
 
 .star {
@@ -115,7 +124,8 @@ a.contact-google-card {
         margin-right: 0;
     }
     .fixed-top {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
     .gal-1 {
         height: 200px;
