@@ -50,7 +50,8 @@ set :strip_index_file, true
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
+configure :build do
+  activate :gzip
 #   activate :minify_css
 #   activate :minify_javascript, compressor: Terser.new
-# end
+end
