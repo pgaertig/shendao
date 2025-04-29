@@ -146,16 +146,5 @@
     } catch (e) {
         console.error('Touch', e);
     }
-
-    // Check if keyword in param "k" contans 'lubo', 'puszczykow', 'komornik' then remove `d-none` from `lubon` element
-    try {
-        const url = new URL(window.location.href);
-        const k = url.searchParams.get('k');
-        if (k && k.match(/lubo|puszczykow|komornik/)) {
-            document.getElementById('lubon').classList.remove('d-none');
-        }
-    } catch (e) {
-        console.error('Lubon', e);
-    }
 </script>
 </html>

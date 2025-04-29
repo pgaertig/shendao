@@ -153,10 +153,7 @@
 </svg> WhatsApp</a>
 </div>
         <p class="mt-3">
-          Masz pytania i wątpliwości odnośnie akupunktury? Chętnie na nie odpowiem. Zadzwoń lub wyślij wiadomość. Oddzwonię.
-        </p>
-        <p id="lubon" class="mt-3 d-none" >
-          Jesteś z <b>Lubonia</b>, <b>Komornik</b> lub <b>Puszczykowa</b>? Istnieje możliwość wykonania zabiegów akupunktury w Twoim domu - skontaktuj się ze mną.
+          Masz pytania i wątpliwości odnośnie akupunktury? Chętnie na nie odpowiem.
         </p>
       </div>
       </div>
@@ -365,7 +362,6 @@
   </main>
   <footer class="border-top pt-3">
     <p>&copy; 2025 shendao.poznan.pl</p>
-    <p><a href="akupunktura-lubon/">Akupunktura Luboń</a></p>
   </footer>
 
 </div>
@@ -429,17 +425,6 @@
         observer.observe(contact);
     } catch (e) {
         console.error('Touch', e);
-    }
-
-    // Check if keyword in param "k" contans 'lubo', 'puszczykow', 'komornik' then remove `d-none` from `lubon` element
-    try {
-        const url = new URL(window.location.href);
-        const k = url.searchParams.get('k');
-        if (k && k.match(/lubo|puszczykow|komornik/)) {
-            document.getElementById('lubon').classList.remove('d-none');
-        }
-    } catch (e) {
-        console.error('Lubon', e);
     }
 </script>
 </html>
