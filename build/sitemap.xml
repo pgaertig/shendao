@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>/akupunktura-lubon/</loc>
-      <lastmod>2025-06-16T21:36:29+02:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>/blog/akupunktura-na-jelito-drazliwe-ibs.html</loc>
-      <lastmod>2025-04-08T20:05:09+02:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>/blog/akupunktura-na-stres-i-bezsennosc.html</loc>
-      <lastmod>2025-04-08T20:05:09+02:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>/blog/akupunktura-na-zatoki.html</loc>
-      <lastmod>2025-04-08T20:05:09+02:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>/blog/</loc>
-      <lastmod>2025-04-08T20:05:09+02:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    <url>
       <loc>/en/</loc>
-      <lastmod>2025-06-16T21:36:29+02:00</lastmod>
+      <lastmod>2025-10-14T22:56:11+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/akupunktura-lubon/</loc>
+      <lastmod>2025-10-14T22:56:11+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>/</loc>
-      <lastmod>2025-06-16T21:36:29+02:00</lastmod>
+      <lastmod>2025-10-14T22:56:11+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1</priority>
+    </url>
+    <url>
+      <loc>/blog/akupunktura-na-jelito-drazliwe-ibs.html</loc>
+      <lastmod>2025-10-14T22:50:46+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/blog/akupunktura-na-stres-i-bezsennosc.html</loc>
+      <lastmod>2025-10-14T22:50:46+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/blog/</loc>
+      <lastmod>2025-10-14T22:50:46+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>/blog/akupunktura-na-zatoki.html</loc>
+      <lastmod>2025-10-14T22:50:46+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
     </url>
 </urlset>
