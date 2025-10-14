@@ -6,6 +6,8 @@ on:
 
 jobs:
   build-and-commit:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
