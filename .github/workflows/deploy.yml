@@ -1,0 +1,39 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install rsync
+        run: sudo apt-get update && sudo apt-get install -y rsync
+
+      - name: SSH setup (key, config, known_hosts)
+        run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_SSH_KEY" | base64 -d > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "Host shendao.poznan.pl" >> ~/.ssh/config
+          echo "  HostName $DEPLOY_SSH_HOST" >> ~/.ssh/config
+          echo "  User $DEPLOY_SSH_USER" >> ~/.ssh/config
+          echo "  Port $DEPLOY_SSH_PORT" >> ~/.ssh/config
+          echo "  IdentityFile ~/.ssh/id_ed25519" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking accept-new" >> ~/.ssh/config
+          chmod 600 ~/.ssh/config
+          ssh-keyscan -p $DEPLOY_SSH_PORT $DEPLOY_SSH_HOST >> ~/.ssh/known_hosts
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_SSH_USER: ${{ secrets.DEPLOY_SSH_USER }}
+          DEPLOY_SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
+          DEPLOY_SSH_PORT: ${{ secrets.DEPLOY_SSH_PORT }}
+
+      - name: Run deploy.sh
+        run: bash ./deploy.sh
