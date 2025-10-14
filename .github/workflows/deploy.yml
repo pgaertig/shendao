@@ -13,6 +13,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Take ruby from .tool-versions
+        run: |
+          cat .tool-versions
+          sed -i 's/ruby //g' .tool-versions
+          cat .tool-versions
+          echo "RUBY_VERSION=$(cat .tool-versions)" >> $GITHUB_ENV
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build with Middleman
+        run: bundle exec middleman build
+
       - name: Install rsync
         run: sudo apt-get update && sudo apt-get install -y rsync
 
