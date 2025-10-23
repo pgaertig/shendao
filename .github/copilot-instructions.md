@@ -39,6 +39,7 @@
 - never change title, scripts, structure unless explicitly instructed
 - always check both files when making changes
 - ensure if instruction can be applied to both languages, apply it to both files with respective translations
+- when adding new item to training section on home page put each new entry on top of the list
 
 ### Blog posts
 - blog content is Polish only, blog posts are in `source/blog/`
