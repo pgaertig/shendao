@@ -4,4 +4,5 @@
 .sass-cache
 .idea
 build/**/*.gz
+build/sitemap.xml
 vendor/

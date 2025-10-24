@@ -5,3 +5,6 @@ gem 'middleman-autoprefixer', '~> 3.0'
 gem 'terser', '~> 1.1'
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby, :x64_mingw]
 gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw, :x64_mingw]
+
+# Checks HTML files for broken links and other problems
+gem 'html-proofer', '5.0.10'

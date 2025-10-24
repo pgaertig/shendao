@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <% sitemap.resources.select { |page| page.destination_path =~ /\.html/ && page.data.noindex != true }.each do |page| %>
+  <% sitemap.resources
+       .select { |page| page.destination_path =~ /\.html/ && page.data.noindex != true }
+       .sort_by { |page| page.url }
+       .each do |page| %>
     <url>
       <loc><%= page.url %></loc>
       <% last_mod = if page.path.start_with?('blog/')

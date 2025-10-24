@@ -15,10 +15,11 @@ jobs:
 
       - name: Take ruby from .tool-versions
         run: |
-          cat .tool-versions
-          sed -i 's/ruby //g' .tool-versions
-          cat .tool-versions
-          echo "RUBY_VERSION=$(cat .tool-versions)" >> $GITHUB_ENV
+          cat .tool-versions 
+          RUBY_VERSION=$(grep -oP '^ruby \K.*' .tool-versions)
+          echo "Detected RUBY_VERSION: $RUBY_VERSION"
+          [ -z "$RUBY_VERSION" ] && (echo "ruby version not found in .tool-versions" && exit 1)
+          echo "RUBY_VERSION=$(grep -oP '^ruby \K.*' .tool-versions)" >> $GITHUB_ENV
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -26,14 +27,11 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
 
-      - name: Install dependencies
-        run: bundle install
-
-      - name: Build with Middleman
-        run: bundle exec middleman build
+      - name: Build
+        run: ./build.sh
 
       - name: Install rsync
-        run: sudo apt-get update && sudo apt-get install -y rsync
+        run: sudo apt-get update -qq && sudo apt-get install -qq rsync && rsync --version
 
       - name: SSH setup (key, config, known_hosts)
         run: |

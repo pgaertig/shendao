@@ -16,34 +16,45 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Take ruby from .tool-versions
+        run: |
+          cat .tool-versions 
+          RUBY_VERSION=$(grep -oP '^ruby \K.*' .tool-versions)
+          echo "Detected RUBY_VERSION: $RUBY_VERSION"
+          [ -z "$RUBY_VERSION" ] && (echo "ruby version not found in .tool-versions" && exit 1)
+          echo "RUBY_VERSION=$(grep -oP '^ruby \K.*' .tool-versions)" >> $GITHUB_ENV          
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
 
-      - name: Install dependencies
-        run: bundle install
+      - name: Build
+        run: ./build.sh
 
-      - name: Build with Middleman
-        run: bundle exec middleman build
-
-      - name: Check for changes in build directory
-        id: git-check
+      - name: Detect if build changes are commited, stderr
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add build/
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "Changes detected."
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
+          git diff --exit-code -- build/ -- ':!build/sitemap.xml' ':!build/*.gz' \
+          || echo "Build directory expected changes, please commit the updated build/ directory."
 
-      - name: Commit and push changes
-        if: steps.git-check.outputs.changed == 'true'
-        run: |
-          git commit -m "chore(build): update page build/ [skip ci]"
-          git push origin HEAD:${{ github.head_ref }}
+#      - name: Check for changes in build directory
+#        id: git-check
+#        run: |
+#          git config --global user.name "github-actions[bot]"
+#          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+#          git add build/
+#          if git diff --cached --quiet; then
+#            echo "No changes to commit."
+#            echo "changed=false" >> $GITHUB_OUTPUT
+#          else
+#            echo "Changes detected."
+#            echo "changed=true" >> $GITHUB_OUTPUT
+#          fi
+
+#      - name: Commit and push changes
+#        if: steps.git-check.outputs.changed == 'true'
+#        run: |
+#          git commit -m "chore(build): update page build/ [skip ci]"
+#          git push origin HEAD:${{ github.head_ref }}
 
