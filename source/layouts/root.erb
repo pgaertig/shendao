@@ -122,6 +122,17 @@
         console.log('gtag not available');
     }
 
+    document.querySelectorAll('.calendesk').forEach((el) => {
+        el.addEventListener('click', () => {
+            try{
+                fetch('/touch.json?a=' + el.id);
+            } catch (e) {
+                console.error('calendesk touch', e);
+            }
+        });
+    });
+
+
     /** Send request to server /contact when user viewport shows contact, do it once then detach the handler, all in try/catch to not interrupt user flow.
      * Generate number and keep localStorage then append that number to touch.json param "n=number". Use number from localStorage if exists.
      * */
