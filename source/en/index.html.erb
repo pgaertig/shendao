@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShenDao - Acupuncture Poznan (English) - Magdalena Gaertig</title>
-  <meta name="description" content="Cosy acupuncture clinic in Poznan, Poland. Chinese medicine for helping treat wide range of conditions and improve health. Book your visit today!" />
+  <meta name="description" content="Cosy acupuncture clinic in Poznan, Poland. Chinese medicine to help treat wide range of conditions and improve your health. Book your appointment today!" />
   <meta name="keywords" content="acupuncture, Poznań, migraine, headache, stress, gynecology, hormonal, digestion, skin, allergies, urinary system, muscles, joints, scar, surgery, Poznań, Wilda"/>
   <meta name="author" content="ShenDao"/>
   <meta name="robots" content="index, follow"/>
@@ -30,7 +30,7 @@
       <div class="container-fluid p-0">
           <a class="navbar-brand" href="#">
             <img id="logo" class="logo" src="../logo2.svg" alt="ShenDao" width="90" />
-            <h1 class="text-wrap">Acupuncture &middot; Poznań</h1>
+            <h1 class="text-wrap">Acupuncture &middot; Poznan</h1>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
                 <a class="nav-link" href="#how-it-works">How It Works?</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#visit">Visit</a>
+                <a class="nav-link" href="#visit">Appointment</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about-me">About Me</a>
@@ -53,7 +53,7 @@
                 <a class="nav-link" href="../"><span>🇵🇱</span><span class="no-mobile"> Polski</span></a>
               </li>
             </ul>
-            <a href="tel:600704120" class="btn btn-primary d-none d-lg-inline"><i class="bi bi-telephone"></i> 600 704 120</a>
+            <a href="tel:+48600704120" class="btn btn-primary d-none d-lg-inline"><i class="bi bi-telephone"></i>+48 600 704 120</a>
           </div>
         </div>
       </nav>
@@ -68,9 +68,15 @@
         <div class="bg-body-tertiary rounded-3 h-100 d-flex justify-content-center align-items-center">
           <div class="pt-3 ps-3 pe-3 text-center">
             <p class="fs-5">
-              Hi! I'm Magda and I invite you to my acupuncture clinic in Poznań. Please book visit via phone or SMS. I look forward to meeting you!
+              Hi! I'm Magda and I invite you to my acupuncture clinic in Poznań, Poland. Please book an appointment via WhatsApp or SMS. I look forward to meeting you!
             </p>
-            <%= partial('partials/contact_buttons') %>
+            <span class="no-wrap d-none d-lg-inline fs-3 text-primary"><span class=""><%= partial('partials/whatsapp_icon.erb') %></span> <b>+48 600 704 120</b></span>
+            <div class="d-lg-none">
+              <a id="wa" href="https://wa.me/48600704120" class="btn btn-success btn-md no-wrap mb-1 gtag" type="button"><%= partial('partials/whatsapp_icon.erb') %> WhatsApp</a>
+              <a id="tel" href="tel:+48600704120" class="btn btn-primary btn-md no-wrap mb-1 gtag" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
+              </svg>+48 600 704 120</a>
+            </div>
           </div>
         </div>
       </div>
@@ -128,14 +134,14 @@
     <hr class="pt-3"/>
 
     <section id="visit" class="row">
-      <h2>Visit</h2>
+      <h2>Appointment</h2>
       <div class="col-md-6">
-        <h3>Treatment</h3>
+        <h3>Treatment session</h3>
         <p>
-          An acupuncture treatment involves inserting thin, single-use, sterile needles into specific points on the body to restore the free flow of Qi energy. Stress, emotions, poor dietary habits, or lifestyle can lead to blockages or imbalances in Qi energy, which may manifest as pain, digestive issues, or gynecological problems. By stimulating acupuncture points, I promote physical and mental well-being and support the body in restoring balance and healing.
+          An acupuncture treatment involves inserting thin, single-use, sterile needles into specific points on the body to restore the free flow of Qi (vital energy in Chinese medicine). Stress, emotions, poor dietary habits, or lifestyle can lead to blockages or imbalances in Qi energy, which may manifest as pain, digestive issues, or gynecological problems. By stimulating acupuncture points, I promote physical and mental well-being and support the body in restoring balance and healing.
         </p>
         <p>
-          Acupuncture needles are very small — usually 0.2 mm. Insertion is not painful, though you might experience tingling, pressure, or a mild electric sensation along the meridian.
+          Acupuncture needles are tiny — usually 0.2 mm. Insertion is not painful, though you might experience tingling, pressure, or a mild electric sensation along the meridian.
         </p>
         <p>
           To choose the right points during acupuncture therapy and assess which areas need support, I conduct a detailed interview regarding symptoms, lifestyle, dietary habits, and emotions. Additionally, I will check your pulse, examine your face and tongue, and perform abdominal palpation.
@@ -147,24 +153,24 @@
           <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">First Visit</h5>
-                <p class="card-text"><b>200 PLN</b></p>
+                <h5 class="card-title">First appointment</h5>
+                <p class="card-text"><b>200 PLN (Polish Złoty)</b></p>
               </div>
-              <div class="card-footer text-body-secondary">Lasts up to 1 hour.</div>
+              <div class="card-footer text-body-secondary">Duration: up to 1 hour.</div>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Follow-up Visit</h5>
-                <p class="card-text">150 PLN</p>
+                <h5 class="card-title">Follow-up appointment</h5>
+                <p class="card-text">150 PLN (Polish Złoty)</p>
               </div>
-              <div class="card-footer text-body-secondary">Lasts up to 45 minutes.</div>
+              <div class="card-footer text-body-secondary">Duration: up to 45 minutes.</div>
             </div>
           </div>
         </div>
         <p>
-          <b>Payment methods: cash, BLIK to phone number.</b>
+          <b>Payment methods: cash, BLIK (Polish instant payment system via to phone number).</b>
         </p>
         <p>
           The number and frequency of treatments are tailored individually. Therapeutic effects depend on the duration and severity of symptoms.
@@ -232,12 +238,12 @@
           Poland<br/>
         </p>
         <p>
-          Phone/SMS: <a href="tel:600704120">600 704 120</a><br/>
+          Phone/WhatsApp: <a href="tel:+48600704120">+48 600 704 120</a><br/>
           Email: <a href="#" class="email" data-email="shendao.poznan"></a><br/>
           Website: <a href="https://shendao.poznan.pl">https://shendao.poznan.pl</a><br/>
           Google: <a class="contact-google-card" href="https://maps.app.goo.gl/JAwtikE1TeZY9BSb9"><span class="rating">5.0 <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span> (5)</span></a><br/>
           Facebook:
-          <div class="fb-page" data-href="https://www.facebook.com/shendao.poznan/" data-tabs="" data-width="400px" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shendao.poznan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shendao.poznan/">ShenDao Acupunkture Poznan</a></blockquote></div>
+          <div class="fb-page" data-href="https://www.facebook.com/shendao.poznan/" data-tabs="" data-width="400px" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shendao.poznan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shendao.poznan/">ShenDao Acupuncture Poznan</a></blockquote></div>
 
         </p>
         <script>
@@ -254,10 +260,10 @@
         <h3 class="d-lg-none">Location</h3>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1624.9968589305527!2d16.916620026953286!3d52.393186253738264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b5a31aab13b%3A0x3752f63fc6d62df1!2sShenDao%20-%20Akupunktura%20-%20Magdalena%20Gaertig!5e0!3m2!1sen!2spl!4v1736354184615!5m2!1sen!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 aria-label="Bergera 1A, Poznań"></iframe>
-        <p>Transportation:</p>
+        <p>Getting here:</p>
         <ul>
-          <li>100m - tram stop Rynek Wilda, lines: 2, 9, 10, 19</li>
-          <li>1000m - Poznań Główny train station</li>
+          <li>100m - tram/streetcar stop Rynek Wildecki, lines: 2, 9, 10, 19</li>
+          <li>1000m - Poznań Main (Poznan Główny) train station</li>
           <li>Paid parking zone on Bergera Street</li>
         </ul>
       </div>
