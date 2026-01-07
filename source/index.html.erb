@@ -17,6 +17,7 @@ priority: 1
         <button  class="toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Rozwiń menu">
           <span class="toggler navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto mb-2 pe-4 mb-lg-0">
             <li class="nav-item">
@@ -46,11 +47,15 @@ priority: 1
 </div>
 <div class="container py-4">
   <main>
-
   <div class="row align-items-md-stretch">
     <div class="col-md-6 mb-3">
       <div class="bg-body-tertiary rounded-3 h-100 d-flex justify-content-center align-items-center">
       <div class="pt-3 ps-3 pe-3 text-center ">
+        <div id="en-bar" class="fs-6 d-none" lang="en">
+          <div>🇺🇸🇬🇧</div>
+          I speak English! Please see<br/> <a href="en/">English version of my website</a>.
+          <hr/>
+        </div>
         <p class="fs-5">
           Cześć! Jestem Magda i zapraszam Cię do mojego kameralnego gabinetu akupunktury w Poznaniu przy Rynku Wildeckim. Umów wizytę:
         </p>
@@ -241,7 +246,7 @@ priority: 1
         Facebook:
         <div class="fb-page" data-href="https://www.facebook.com/shendao.poznan/" data-tabs="" data-lazy="true" data-width="400px" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shendao.poznan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shendao.poznan/">ShenDao Akupunktura Poznań</a></blockquote></div><br/>
       </p>
-      <script>
+      <script defer="defer">
         var emailLinks = document.getElementsByClassName('email');
         for (i = 0; i < emailLinks.length; i++) {
           var ctrl = emailLinks[i];
@@ -270,3 +275,14 @@ priority: 1
 
 </div>
 
+<script defer="defer" async="async">
+  //Check if browser's user setting lists Polish language
+  try {
+    if (!navigator.language.includes('pl') && !navigator.languages.some(lang => lang.startsWith('pl'))) {
+      document.getElementById('en-bar').classList.add('d-sm-block');
+      fetch('/touch.json?l=' + navigator.languages.join(','));
+    }
+  } catch (e) {
+    console.error('Error checking browser language settings:', e);
+  }
+</script>
