@@ -1,4 +1,6 @@
-# Copilot Instructions for shendao.poznan.pl
+# Agents Instructions for shendao.poznan.pl project
+
+Static marketing website for **ShenDao Acupuncture clinic in Poznan, Poland**, built with Ruby Middleman. Bilingual: Polish (primary) and English.
 
 ## Project Overview
 - This is a Ruby Middleman static site project.
@@ -13,11 +15,23 @@
 - CSS and JS are managed in their respective folders under `source/`.
 
 ## Automation
+### CI/CD Workflow
 - **Build:**
   - On pull requests, GitHub Actions runs Middleman to build the site and commits changes in `build/` back to the PR.
 - **Deploy:**
   - On push to `master` or manual trigger, GitHub Actions runs `deploy.sh` to deploy the site using rsync over SSH.
   - SSH configuration is handled in the workflow using secrets and `.ssh/config`.
+- **Post deployment:**
+  - Ask to verify the deployed site at https://shendao.poznan.pl/ and report any issues.
+
+### Commands
+```bash
+bundle install              # Install dependencies
+middleman server            # Dev server at http://localhost:4567
+./build.sh                  # Build + HTML validation (htmlproofer)
+bundle exec middleman build # Build only, output to build/
+./deploy.sh                 # Deploy via rsync over SSH to production
+```
 
 ## Best Practices
 - Always update `source/` files, not `build/`.
@@ -26,11 +40,14 @@
 - Sensitive data (SSH keys, etc.) must be managed via GitHub Secrets.
 
 ## Directory Reference
-- `source/` — All source content and templates
-- `build/` — Generated static site (do not edit manually)
+- `source/` — All source content and templates, source of truth for edits
+- `build/` — Generated static site, do not edit manually, CI updates this, read to verify changes and look of page after build
 - `.github/workflows/` — CI/CD workflows
-- `deploy.sh` — Deployment script
 - `config.rb` — Middleman configuration
+- `source/layouts/` — ERB templates for page layouts, for now only `blog.erb` for blog entries and `root.erb` for everything else
+- `source/partials/` — Reusable components (contact buttons, icons, etc.)
+- `AGENTS.md` - it is symlink to `.github/copilot-instructions.md`, read and write only AGENTS.md to save tokens
+- `scripts/` — Standalone utility scripts unrelated to the website build; see `scripts/AGENTS.md` for details
 
 ## Page Editing Instructions
 ### Main page
