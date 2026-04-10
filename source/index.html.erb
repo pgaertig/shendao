@@ -74,10 +74,10 @@ priority: 1
   </div>
 
   <section class="gal-1 pb-3">
-    <a href="img/shendao_4.jpg" data-lightbox="gallery" data-title="Akupunktura" class=""><img src="img/shendao_4_thumb.webp" class="gali rounded" alt="Akupunktura" /></a>
-     <a href="img/shendao_2.jpg" data-lightbox="gallery" data-title="Akupunktura" class=""><img src="img/shendao_2_thumb.webp" class="gali rounded" alt="Akupunktura" /></a>
-     <a href="img/shendao_3.jpg"  data-lightbox="gallery" data-title="Akupunktura" class=""><img src="img/shendao_3_thumb.webp" class="gali rounded" alt="Akupunktura" /></a>
-     <a href="img/shendao_5.jpg" data-lightbox="gallery" data-title="Akupunktura" class=""><img src="img/shendao_5_thumb.webp" class="gali rounded" alt="Akupunktura" /></a>
+    <a href="img/shendao_4.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><img src="img/shendao_4_thumb.webp" class="gali rounded" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></a>
+     <a href="img/shendao_2.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><img src="img/shendao_2_thumb.webp" class="gali rounded" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></a>
+     <a href="img/shendao_3.jpg"  data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><img src="img/shendao_3_thumb.webp" class="gali rounded" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></a>
+     <a href="img/shendao_5.jpg" data-lightbox="gallery" data-title="Wejście do budynku" class=""><img src="img/shendao_5_thumb.webp" class="gali rounded" alt="Wejście do budynku" aria-label="Wejście do budynku" /></a>
   </section>
 
   <hr class="pt-3"/>
@@ -149,7 +149,7 @@ priority: 1
           <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Pierwsza wizyta</h5>
+                <h4 class="card-title">Pierwsza wizyta</h4>
                 <p class="card-text"><b>200 zł</b></p>
               </div>
               <div class="card-footer text-body-secondary">Trwa do godziny.</div>
@@ -158,7 +158,7 @@ priority: 1
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Kolejna wizyta</h5>
+                <h4 class="card-title">Kolejna wizyta</h4>
                 <p class="card-text"><b>150 zł</b></p>
               </div>
               <div class="card-footer text-body-secondary">Trwa do 45 minut.</div>
@@ -280,7 +280,7 @@ priority: 1
   try {
     if (!navigator.language.includes('pl') && !navigator.languages.some(lang => lang.startsWith('pl'))) {
       document.getElementById('en-bar').classList.add('d-sm-block');
-      fetch('/touch.json?l=' + navigator.languages.join(','));
+      navigator.sendBeacon('/touch.json?l=' + navigator.languages.join(','));
     }
   } catch (e) {
     console.error('Error checking browser language settings:', e);

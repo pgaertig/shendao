@@ -114,7 +114,7 @@
                         el.addEventListener('click', () => {
                                 try{
                                         //get id of element
-                                        fetch('/touch.json?a=' + el.id);
+                                        navigator.sendBeacon('/touch.json?a=' + el.id);
                                         return gtag_report_conversion(el.href);
                                 } catch (e) {
                                         console.error('gtag', e);
