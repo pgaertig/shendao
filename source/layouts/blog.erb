@@ -33,15 +33,8 @@
       "url": "https://shendao.poznan.pl/<%= current_path %>",
       "datePublished": "<%= current_page.data.date_published %>",
       "dateModified": "<%= current_page.data.date_published %>",
-      "author": {
-        "@type": "Person",
-        "name": "Magdalena Gaertig"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "ShenDao Akupunktura Poznań",
-        "url": "https://shendao.poznan.pl"
-      }
+      "author": { "@id": "https://shendao.poznan.pl/#person" },
+      "publisher": { "@id": "https://shendao.poznan.pl/#business" }
     }
   </script>
   <script type="application/ld+json">
@@ -53,6 +46,21 @@
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://shendao.poznan.pl/blog/" },
         { "@type": "ListItem", "position": 3, "name": "<%= current_page.data.title %>" }
       ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "<%= current_page.data.title %>",
+      "description": "<%= current_page.data.description %>",
+      "url": "https://shendao.poznan.pl/<%= current_path %>",
+      "about": {
+        "@type": "MedicalTherapy",
+        "name": "Akupunktura"
+      },
+      "author": { "@id": "https://shendao.poznan.pl/#person" },
+      "publisher": { "@id": "https://shendao.poznan.pl/#business" }
     }
   </script>
 <% end %>

@@ -65,6 +65,7 @@
     {
       "@context": "https://schema.org",
       "@type": "HealthAndBeautyBusiness",
+      "@id": "https://shendao.poznan.pl/#business",
       "name": "ShenDao Akupunktura Poznań",
       "image": "https://shendao.poznan.pl/img/shendao-icon256.png",
       "url": "https://shendao.poznan.pl",
@@ -88,7 +89,65 @@
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "10:00",
           "closes": "19:00"
-      }]
+      }],
+      "sameAs": [
+        "https://www.facebook.com/shendao.poznan/",
+        "https://www.google.com/maps?cid=3986519373955608049",
+        "https://www.instagram.com/shendao_magdagaertig/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "6",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://shendao.poznan.pl/#person",
+      "name": "Magdalena Gaertig",
+      "jobTitle": "Akupunkturzystka",
+      "url": "https://shendao.poznan.pl",
+      "worksFor": { "@id": "https://shendao.poznan.pl/#business" },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Polskie Towarzystwo Akupunkturzystów Zawodowych"
+      },
+      "knowsAbout": [
+        "Akupunktura",
+        "Tradycyjna Medycyna Chińska",
+        "Moksoterapia",
+        "Gua sha",
+        "Bańki ogniowe",
+        "Ziołolecznictwo"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/shendao_magdagaertig/",
+        "https://www.facebook.com/shendao.poznan/"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Akupunktura",
+      "name": "Akupunktura w Poznaniu – ShenDao",
+      "description": "Zabiegi akupunktury, bańki ogniowe, gua sha, moksoterapia, lampy TDP oraz zalecenia żywieniowe i ziołowe.",
+      "provider": { "@id": "https://shendao.poznan.pl/#business" },
+      "areaServed": {
+        "@type": "City",
+        "name": "Poznań"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "150–200 PLN",
+        "priceCurrency": "PLN"
+      }
     }
   </script>
 </head>

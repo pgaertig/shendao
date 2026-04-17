@@ -6,3 +6,4 @@
 build/**/*.gz
 build/sitemap.xml
 vendor/
+.playwright*

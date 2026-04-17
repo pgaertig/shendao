@@ -66,6 +66,7 @@ bundle exec middleman build # Build only, output to build/
 - use existing post formatting as reference
 - if text for blog is provided raw, properly format it using existing posts as reference
 - keyword "akupunktura" should be used in every blog post at least once, in URL, title and body
+- whenever any Schema.org structured data is added or modified (in blog posts or layouts), the user must first run `./build.sh && ./deploy.sh`, and only then validate with Google Rich Results Test at https://search.google.com/test/rich-results (the test crawls the live site, so changes must be deployed first)
 
 ## User instructions
 - instructions to edit content will be provided in Polish
