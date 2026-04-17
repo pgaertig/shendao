@@ -5,7 +5,7 @@
        .sort_by { |page| page.url }
        .each do |page| %>
     <url>
-      <loc><%= page.url %></loc>
+      <loc>https://shendao.poznan.pl<%= page.url %></loc>
       <% last_mod = if page.path.start_with?('blog/')
                       File.mtime(page.source_file).to_time
                     else
