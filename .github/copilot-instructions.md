@@ -28,14 +28,14 @@ Static marketing website for **ShenDao Acupuncture clinic in Poznan, Poland**, b
 ```bash
 bundle install              # Install dependencies
 middleman server            # Dev server at http://localhost:4567
-./build.sh                  # Build + HTML validation (htmlproofer)
-bundle exec middleman build # Build only, output to build/
+./build.sh                  # Build + HTML validation (htmlproofer) — always use this, not middleman build directly
 ./deploy.sh                 # Deploy via rsync over SSH to production
 ```
 
 ## Best Practices
 - Always update `source/` files, not `build/`.
-- Test locally with `bundle exec middleman build` before pushing.
+- Always build with `./build.sh` (not `bundle exec middleman build` directly) — it includes htmlproofer validation.
+- Always deploy with `./deploy.sh`.
 - Keep deployment logic in `deploy.sh` for consistency.
 - Sensitive data (SSH keys, etc.) must be managed via GitHub Secrets.
 
@@ -66,7 +66,10 @@ bundle exec middleman build # Build only, output to build/
 - use existing post formatting as reference
 - if text for blog is provided raw, properly format it using existing posts as reference
 - keyword "akupunktura" should be used in every blog post at least once, in URL, title and body
-- whenever any Schema.org structured data is added or modified (in blog posts or layouts), the user must first run `./build.sh && ./deploy.sh`, and only then validate with Google Rich Results Test at https://search.google.com/test/rich-results (the test crawls the live site, so changes must be deployed first)
+- whenever any Schema.org structured data is added or modified (in blog posts or layouts), first run `./build.sh && ./deploy.sh`, and then validate using Playwright:
+  1. Navigate to https://www.google.com and accept the privacy/cookie consent prompt if present
+  2. Navigate to https://search.google.com/test/rich-results and test the live URL
+  (the test crawls the live site, so changes must be deployed first)
 
 ## User instructions
 - instructions to edit content will be provided in Polish
