@@ -3,8 +3,6 @@ layout: root
 priority: 1
 ---
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0" data-proofer-ignore></script>
 <div class="container py-4">
   <div class="container fixed-top border-bottom">
   <header class="">
@@ -68,16 +66,19 @@ priority: 1
     </div>
     <div class="col-md-6 mb-3">
       <div class="h-100">
-        <img src="aku2.webp" decoding="async" class="img-fluid side-img d-none d-lg-inline" alt="Akupunktura" width="673" height="449" />
+        <picture>
+          <source media="(min-width: 992px)" srcset="aku2.webp">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" fetchpriority="high" class="img-fluid side-img d-none d-lg-inline" alt="Akupunktura" width="673" height="449" />
+        </picture>
       </div>
     </div>
   </div>
 
   <section class="gal-1 pb-3">
-    <a href="img/shendao_4.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><img src="img/shendao_4_thumb.webp" class="gali rounded" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></a>
-     <a href="img/shendao_2.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><img src="img/shendao_2_thumb.webp" class="gali rounded" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></a>
-     <a href="img/shendao_3.jpg"  data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><img src="img/shendao_3_thumb.webp" class="gali rounded" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></a>
-     <a href="img/shendao_5.jpg" data-lightbox="gallery" data-title="Wejście do budynku" class=""><img src="img/shendao_5_thumb.webp" class="gali rounded" alt="Wejście do budynku" aria-label="Wejście do budynku" /></a>
+    <a href="img/shendao_4.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><picture><source media="(max-width: 991.98px)" srcset="img/shendao_4_thumb_m.webp"><img src="img/shendao_4_thumb.webp" class="gali rounded" width="450" height="600" fetchpriority="high" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a>
+     <a href="img/shendao_2.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><picture><source media="(max-width: 991.98px)" srcset="img/shendao_2_thumb_m.webp"><img src="img/shendao_2_thumb.webp" class="gali rounded" width="450" height="600" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a>
+     <a href="img/shendao_3.jpg"  data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" class=""><picture><source media="(max-width: 991.98px)" srcset="img/shendao_3_thumb_m.webp"><img src="img/shendao_3_thumb.webp" class="gali rounded" width="450" height="600" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a>
+     <a href="img/shendao_5.jpg" data-lightbox="gallery" data-title="Wejście do budynku" class=""><picture><source media="(max-width: 991.98px)" srcset="img/shendao_5_thumb_m.webp"><img src="img/shendao_5_thumb.webp" class="gali rounded" width="450" height="600" alt="Wejście do budynku" aria-label="Wejście do budynku" /></picture></a>
   </section>
 
   <hr class="pt-3"/>
@@ -249,7 +250,7 @@ priority: 1
         Strona: <a href="https://shendao.poznan.pl">https://shendao.poznan.pl</a><br/>
         Google: <a class="contact-google-card" href="https://www.google.com/maps?cid=3986519373955608049"><span class="rating">5.0 <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span> (7)</span></a><br/>
         Facebook:
-        <div class="fb-page" data-href="https://www.facebook.com/shendao.poznan/" data-tabs="" data-lazy="true" data-width="400px" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shendao.poznan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shendao.poznan/">ShenDao Akupunktura Poznań</a></blockquote></div><br/>
+        <a href="https://www.facebook.com/shendao.poznan/" target="_blank" rel="noopener"><img src="img/facebook-shendao.webp" class="img-fluid" width="400" height="71" loading="lazy" alt="ShenDao Akupunktura Poznań na Facebooku" /></a><br/>
       </p>
       <script defer="defer">
         var emailLinks = document.getElementsByClassName('email');
@@ -275,7 +276,7 @@ priority: 1
 
   </main>
   <footer class="border-top pt-3">
-    <p>&copy; 2026 shendao.poznan.pl | <a href="/polityka-prywatnosci.html">Polityka prywatności</a> | <a href="/blog/">Blog</a> | <a href="/blog/najczesciej-zadawane-pytania-akupunktura.html">FAQ</a></p>
+    <p>&copy; 2026 ShenDao | <a href="/polityka-prywatnosci.html">Polityka prywatności</a> | <a href="/blog/">Blog</a> | <a href="/blog/najczesciej-zadawane-pytania-akupunktura.html">FAQ</a></p>
   </footer>
 
 </div>

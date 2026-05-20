@@ -1,0 +1,107 @@
+// --- Reboot + base elements ------------------------------------------------
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 130px;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $body-color;
+  background-color: $body-bg;
+  padding-top: $navbar-height;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+h1 { display: inline; font-size: 1em; }   // brand heading — kept inline
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p { margin-top: 0; margin-bottom: 1rem; }
+
+ul, ol { margin-top: 0; margin-bottom: 1rem; padding-left: 2rem; }
+
+b, strong { font-weight: bolder; }
+
+a {
+  color: $primary-dark;
+  text-decoration: underline;
+}
+a:visited { color: $primary; }
+a:hover { color: $primary-darker; }
+
+hr {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px solid currentColor;
+  color: inherit;
+  opacity: .25;
+}
+
+img, svg { vertical-align: middle; }
+
+.img-fluid { max-width: 100%; height: auto; }
+
+// fit map iframe to its column
+iframe { width: 100%; border: none; }
+
+svg.bi {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+code {
+  font-size: .875em;
+  color: $code-color;
+  word-wrap: break-word;
+}
+
+button {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// --- Tables (privacy policy) ----------------------------------------------
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: $body-color;
+  border-collapse: collapse;
+  vertical-align: top;
+
+  th, td {
+    padding: .5rem;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+  thead th { vertical-align: bottom; }
+}
+.table-bordered th,
+.table-bordered td { border: 1px solid $border-color; }
+.table-sm th,
+.table-sm td { padding: .25rem; }
+.table-light { background-color: $light; }

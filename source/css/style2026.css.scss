@@ -1,0 +1,13 @@
+// ShenDao site stylesheet (2026).
+// Hand-written replacement for the full Bootstrap 5 build — only the classes
+// actually used on the site. Compiled by Middleman (sassc).
+// Edit the partials in style2026/ — this file only wires them together.
+
+@import "style2026/variables";
+@import "style2026/base";
+@import "style2026/layout";
+@import "style2026/navbar";
+@import "style2026/buttons";
+@import "style2026/cards";
+@import "style2026/utilities";
+@import "style2026/components";

@@ -1,0 +1,53 @@
+// --- Theme variables -------------------------------------------------------
+
+// Brand colours — each as base / dark (hover) / darker (active)
+
+// Zen Mocha brown — buttons + links
+$primary:         #6f5544;
+$primary-dark:    #5d4738;
+$primary-darker:  #4c3a2e;
+
+// Warm zen white — foreground/text on solid buttons (contrast for $primary)
+$on-primary:      #f7f3ea;
+
+// Forest green — WhatsApp button
+$whatsapp:        #3f6b4a;
+$whatsapp-dark:   #365b3f;
+$whatsapp-darker: #2d4b34;
+
+// Neutrals
+$white:            #ffffff;
+$black:            #000000;
+$body-color:       #292621;
+$body-bg:          $white;
+$muted:            #74736e;
+$border-color:     #dee2e6;
+$light: #f3f0e8;  // subtle tinted surface (table head, welcome box)
+$code-color: #954e36;  // inline <code>
+$rating-color:     #5e5e5e;  // Google rating text
+$disclaimer-color: #666666;  // blog legal disclaimer text
+
+// Translucent UI colours derived from $black / $white
+$navbar-bg:                   rgba($white, .7);    // fixed translucent navbar
+$navbar-shadow:               rgba($body-color, .5);    // navbar drop shadow (mobile)
+$navbar-brand-color:          $body-color;
+$nav-link-color:              $body-color;
+$nav-link-hover-color:        $body-color;
+$navbar-toggler-border-color: $border-color;
+$navbar-toggler-icon-color:   $primary-darker;   // hamburger bars
+$card-border-color:           $border-color;
+$card-cap-bg:                 $light;   // card footer background
+
+// Responsive breakpoints (Bootstrap 5 scale)
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  992px;
+$bp-xl:  1200px;
+$bp-xxl: 1400px;
+
+// Layout
+$gutter:        1.5rem; // grid gutter (Bootstrap --bs-gutter-x)
+$navbar-height: 80px;   // fixed-navbar offset applied to <body>
+
+// Spacing scale (Bootstrap: 0..5)
+$spacers: (0: 0, 1: .25rem, 2: .5rem, 3: 1rem, 4: 1.5rem, 5: 3rem);

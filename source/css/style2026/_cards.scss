@@ -1,0 +1,29 @@
+// --- Cards (pricing) -------------------------------------------------------
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $white;
+  background-clip: border-box;
+  border: 1px solid $card-border-color;
+  border-radius: .375rem;
+  overflow: hidden;   // clip children (e.g. card-footer bg) to the rounded corners
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.card-title { margin-bottom: .5rem; }
+
+.card-text:last-child { margin-bottom: 0; }
+
+.card-footer {
+  padding: .5rem 1rem;
+  background-color: $card-cap-bg;
+  border-top: 1px solid $card-border-color;
+}

@@ -13,6 +13,7 @@ Static marketing website for **ShenDao Acupuncture clinic in Poznan, Poland**, b
 - All content and code changes should be made in `source/` or configuration files.
 - Use ERB templates for dynamic/static HTML generation.
 - CSS and JS are managed in their respective folders under `source/`.
+- When changing CSS, bump the `?YYYY-MM-DD` cache-buster query on the `style2026.css` link to the current date in `root.erb`, `blog.erb` and `en/index.html.erb`, and align the nginx preload header.
 
 ## Automation
 ### CI/CD Workflow

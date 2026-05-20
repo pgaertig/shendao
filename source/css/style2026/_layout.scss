@@ -1,0 +1,51 @@
+// --- Containers + grid -----------------------------------------------------
+
+.container,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter * .5;
+  padding-left: $gutter * .5;
+}
+
+@media (min-width: $bp-sm)  { .container { max-width: 540px; } }
+@media (min-width: $bp-md)  { .container { max-width: 720px; } }
+@media (min-width: $bp-lg)  { .container { max-width: 960px; } }
+@media (min-width: $bp-xl)  { .container { max-width: 1140px; } }
+@media (min-width: $bp-xxl) { .container { max-width: 1320px; } }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-right: $gutter * -.5;
+  margin-left: $gutter * -.5;
+
+  > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding-right: $gutter * .5;
+    padding-left: $gutter * .5;
+  }
+}
+
+@media (min-width: $bp-sm) {
+  .col-sm-6 { flex: 0 0 auto; width: 50%; }
+}
+@media (min-width: $bp-md) {
+  .col-md-6 { flex: 0 0 auto; width: 50%; }
+}
+
+// Fixed navbar wrapper (semi-transparent, blurred)
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: $navbar-bg;
+  backdrop-filter: blur(5px);
+}

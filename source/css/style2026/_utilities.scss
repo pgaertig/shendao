@@ -1,0 +1,103 @@
+// --- Utilities -------------------------------------------------------------
+// Only the Bootstrap utility classes the site actually uses.
+
+// Spacing (margins + paddings), generated for the 0..5 scale.
+@each $key, $val in $spacers {
+  .m-#{$key}  { margin: $val !important; }
+  .mt-#{$key} { margin-top: $val !important; }
+  .mb-#{$key} { margin-bottom: $val !important; }
+  .ms-#{$key} { margin-left: $val !important; }
+  .me-#{$key} { margin-right: $val !important; }
+  .mx-#{$key} { margin-right: $val !important; margin-left: $val !important; }
+  .my-#{$key} { margin-top: $val !important; margin-bottom: $val !important; }
+
+  .p-#{$key}  { padding: $val !important; }
+  .pt-#{$key} { padding-top: $val !important; }
+  .pb-#{$key} { padding-bottom: $val !important; }
+  .ps-#{$key} { padding-left: $val !important; }
+  .pe-#{$key} { padding-right: $val !important; }
+  .px-#{$key} { padding-right: $val !important; padding-left: $val !important; }
+  .py-#{$key} { padding-top: $val !important; padding-bottom: $val !important; }
+}
+.m-auto  { margin: auto !important; }
+.ms-auto { margin-left: auto !important; }
+.me-auto { margin-right: auto !important; }
+
+// Responsive spacing (sm / md / lg)
+@media (min-width: $bp-sm) {
+  @each $key, $val in $spacers {
+    .mt-sm-#{$key} { margin-top: $val !important; }
+    .mb-sm-#{$key} { margin-bottom: $val !important; }
+    .ms-sm-#{$key} { margin-left: $val !important; }
+    .me-sm-#{$key} { margin-right: $val !important; }
+  }
+  .ms-sm-auto { margin-left: auto !important; }
+}
+@media (min-width: $bp-md) {
+  @each $key, $val in $spacers {
+    .mt-md-#{$key} { margin-top: $val !important; }
+    .mb-md-#{$key} { margin-bottom: $val !important; }
+  }
+}
+@media (min-width: $bp-lg) {
+  @each $key, $val in $spacers {
+    .mt-lg-#{$key} { margin-top: $val !important; }
+    .mb-lg-#{$key} { margin-bottom: $val !important; }
+    .ms-lg-#{$key} { margin-left: $val !important; }
+    .me-lg-#{$key} { margin-right: $val !important; }
+  }
+  .ms-lg-auto { margin-left: auto !important; }
+}
+
+// Display
+.d-none         { display: none !important; }
+.d-inline       { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-block        { display: block !important; }
+.d-flex         { display: flex !important; }
+
+@media (min-width: $bp-sm) {
+  .d-sm-none   { display: none !important; }
+  .d-sm-inline { display: inline !important; }
+  .d-sm-block  { display: block !important; }
+  .d-sm-flex   { display: flex !important; }
+}
+@media (min-width: $bp-lg) {
+  .d-lg-none   { display: none !important; }
+  .d-lg-inline { display: inline !important; }
+  .d-lg-block  { display: block !important; }
+  .d-lg-flex   { display: flex !important; }
+}
+
+// Flex alignment
+.justify-content-center { justify-content: center !important; }
+.align-items-center     { align-items: center !important; }
+.align-items-stretch    { align-items: stretch !important; }
+@media (min-width: $bp-md) {
+  .align-items-md-stretch { align-items: stretch !important; }
+}
+
+// Sizing
+.h-100 { height: 100% !important; }
+.w-100 { width: 100% !important; }
+
+// Text
+.text-center  { text-align: center !important; }
+.text-wrap    { white-space: normal !important; }
+.text-primary { color: $primary !important; }
+.text-muted,
+.text-body-secondary { color: $muted !important; }
+.small { font-size: .875em; }
+
+// Font sizes
+.fs-3 { font-size: 1.75rem !important; }
+.fs-4 { font-size: 1.5rem !important; }
+.fs-5 { font-size: 1.25rem !important; }
+.fs-6 { font-size: 1rem !important; }
+
+// Borders + radius + background
+.border-top    { border-top: 1px solid $border-color !important; }
+.border-bottom { border-bottom: 1px solid $border-color !important; }
+.rounded       { border-radius: .375rem !important; }
+.rounded-3     { border-radius: .5rem !important; }
+.bg-body-tertiary { background-color: $light !important; }

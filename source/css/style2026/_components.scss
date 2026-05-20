@@ -1,0 +1,75 @@
+// --- Site-specific components ---------------------------------------------
+
+.logo { max-width: 100px; }
+
+// Desaturated hero side image
+.side-img { filter: grayscale(50%) contrast(1); }
+
+// Photo gallery (lightbox thumbnails)
+.gal-1 {
+  display: flex;
+  width: 100%;
+  height: 300px;
+
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  a {
+    display: block;
+    width: 33.3%;
+    padding: 2px;
+
+    &:first-child { padding-left: 0; }
+    &:last-child  { padding-right: 0; }
+  }
+}
+.gali {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Google rating stars
+.star {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 3px;
+  vertical-align: top;
+  background-size: 14px 14px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABiElEQVR4Ae1WJVA+cRBdXNPf3YVExp1eaEgf3Im4RQrukEi43s2XcIdGx92dZRfn+NzQN/POVt7PdufgBfJw2GWewQRjYLfD+uehYI7MPdHqtzFml8BiZxTN48HQIKFeIl6wBwwJFOEziZzcEDxBGXwBQ+FAtAhnoZs8ECzCDLmcolSQ9lEAQwAFeE0Ch0SU8IiW9Y3mo+80d6XRJikiLV0lC8gj25TFko+zvOUaJqKBOCKvvrzIMGsAMc7pDfKArfCWhBv0KNaO7fARVOGoyyyEnLd0ENqlfY1CBBNQF/sdlg5a7atoPrkvWDqCNqAltqKR1qgrxr4cA7rgSDArU1eQfEtBF6AMzCnRogZLusQxurQyfyJqSD/QFnRaCxQknWLKs3EMaANMAVNKMHPnYHRZVNOy2WMP2NB7nhzROawDM216q6ck0QYdiiA5hyqAbKuS0vAATSEZ/YCy/xe2sc8N/zzQFFRTtRR4QszFIbAAFWAf9uUYiq3SpiSsd2XwQ5u/Oo6FZ4tT4mLYm81lTkgAAAAASUVORK5CYII=");
+}
+.rating {
+  display: inline-block;
+  color: $rating-color;
+}
+a.contact-google-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+// WhatsApp link in the Kontakt section (id="wa2") — forest green
+#wa2,
+#wa2:visited { color: $whatsapp; }
+#wa2:hover   { color: $whatsapp-dark; }
+
+.no-wrap { white-space: nowrap; }
+
+// Blog post legal disclaimer
+section.disclaimer {
+  color: $disclaimer-color;
+  font-size: .7em;
+}
+
+// --- Small-screen tweaks ---------------------------------------------------
+@media (max-width: 520px) {
+  body { padding-top: 60px; }
+  html { scroll-padding-top: 120px; }
+  .logo { max-width: 75px; }
+  h1 { font-size: .8em; }
+  .fixed-top { box-shadow: 0 0 10px $navbar-shadow; }
+  .gal-1 { height: 200px; }
+}

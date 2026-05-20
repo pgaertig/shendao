@@ -1,0 +1,136 @@
+// --- Navbar ----------------------------------------------------------------
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+// The navbar's inner container is itself a flex row so the brand and the
+// menu sit on one line, vertically centred.
+.navbar > .container,
+.navbar > .container-fluid {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+// Hold the brand colour across every link state
+.navbar-brand,
+.navbar-brand:visited,
+.navbar-brand:hover,
+.navbar-brand:focus { color: $navbar-brand-color; }
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.nav-link,
+.nav-link:visited {
+  display: block;
+  padding: .5rem 1rem;
+  color: $nav-link-color;          // stays grey even when visited
+  text-decoration: none;
+}
+.nav-link:hover,
+.nav-link:focus { color: $nav-link-hover-color; }
+
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid $navbar-toggler-border-color;
+  border-radius: .375rem;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice('' + $navbar-toggler-icon-color, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// Collapsible menu — JS toggles `.show` on #navbarNav.
+// On mobile it opens/closes over a calm 1s ease-in-out curve: grid-template-rows
+// animates 0fr <-> 1fr, which resolves to the exact content height — so the
+// motion genuinely eases in at the start and eases out at the end.
+// At lg+ it is always open.
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition: grid-template-rows 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    visibility 0s linear 0.5s;
+}
+.navbar-collapse.show {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition: grid-template-rows 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    visibility 0s linear 0s;
+}
+.navbar-collapse > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+// Honour users who prefer reduced motion — show/hide instantly
+@media (prefers-reduced-motion: reduce) {
+  .navbar-collapse,
+  .navbar-collapse.show { transition: none; }
+}
+
+// Below lg the open menu spans the full width — neutralise the desktop-only
+// `ms-auto`, otherwise the grid auto-margin pushes the items to the right.
+@media (max-width: $bp-lg - 0.02px) {
+  .navbar-collapse .navbar-nav { margin-left: 0 !important; }
+}
+
+// Expanded (desktop) layout from the lg breakpoint up
+@media (min-width: $bp-lg) {
+  .navbar-expand-lg {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-lg .navbar-nav { flex-direction: row; }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+  .navbar-expand-lg .navbar-collapse > * { overflow: visible; }
+  .navbar-expand-lg .navbar-toggler { display: none; }
+}

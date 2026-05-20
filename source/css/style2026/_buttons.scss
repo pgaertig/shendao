@@ -1,0 +1,59 @@
+// --- Buttons ---------------------------------------------------------------
+
+.btn {
+  display: inline-block;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: .375rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out,
+    border-color .15s ease-in-out;
+}
+
+// btn-lg is used; btn-md is a no-op in Bootstrap and intentionally undefined.
+.btn-lg {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: .5rem;
+}
+
+.btn-primary,
+.btn-primary:visited {
+  color: $on-primary;                 // keep button text light even when visited
+  background-color: $primary;         // bg
+  border-color: $primary;
+}
+.btn-primary:hover {
+  color: $on-primary;
+  background-color: $primary-dark;    // bg-hover
+  border-color: $primary-dark;
+}
+.btn-primary:active {
+  color: $on-primary;
+  background-color: $primary-darker;  // bg-active
+  border-color: $primary-darker;
+}
+
+.btn-whatsapp,
+.btn-whatsapp:visited {
+  color: $on-primary;                  // keep button text light even when visited
+  background-color: $whatsapp;         // bg
+  border-color: $whatsapp;
+}
+.btn-whatsapp:hover {
+  color: $on-primary;
+  background-color: $whatsapp-dark;    // bg-hover
+  border-color: $whatsapp-dark;
+}
+.btn-whatsapp:active {
+  color: $on-primary;
+  background-color: $whatsapp-darker;  // bg-active
+  border-color: $whatsapp-darker;
+}
