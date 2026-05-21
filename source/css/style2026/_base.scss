@@ -29,7 +29,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 h1 { display: inline; font-size: 1em; }   // brand heading — kept inline
-h2 { font-size: 2rem; }
+h2 {
+  font-size: 2rem;
+  margin-top: 3.5rem;
+  padding-bottom: .2rem;
+  margin-bottom: .65rem;
+  border-bottom: 2px solid $light;
+}
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
@@ -47,14 +53,6 @@ a {
 }
 a:visited { color: $primary; }
 a:hover { color: $primary-darker; }
-
-hr {
-  margin: 1rem 0;
-  border: 0;
-  border-top: 1px solid currentColor;
-  color: inherit;
-  opacity: .25;
-}
 
 img, svg { vertical-align: middle; }
 

@@ -58,12 +58,6 @@ a.contact-google-card {
 
 .no-wrap { white-space: nowrap; }
 
-// Blog post legal disclaimer
-section.disclaimer {
-  color: $disclaimer-color;
-  font-size: .7em;
-}
-
 // --- Small-screen tweaks ---------------------------------------------------
 @media (max-width: 520px) {
   body { padding-top: 60px; }

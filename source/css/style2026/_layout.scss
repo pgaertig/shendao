@@ -38,6 +38,9 @@
 @media (min-width: $bp-md) {
   .col-md-6 { flex: 0 0 auto; width: 50%; }
 }
+@media (min-width: $bp-lg) {
+  .col-lg-6 { flex: 0 0 auto; width: 50%; }
+}
 
 // Fixed navbar wrapper (semi-transparent, blurred)
 .fixed-top {

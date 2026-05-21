@@ -1,0 +1,174 @@
+// --- Site chrome — header (navbar) + footer --------------------------------
+// Semantic, hand-written replacement for the Bootstrap-derived navbar on blog
+// pages. Named generically (`.site-*`) so the homepages can adopt it later.
+
+// The blog header is `position: sticky`, so it sits in normal flow and needs
+// no body offset. Cancel the global fixed-navbar `body { padding-top }` from
+// _base.scss (the homepages still use the old fixed navbar and need it).
+body.blog { padding-top: 0; }
+
+// --- Header bar ------------------------------------------------------------
+// Full-bleed translucent, blurred bar; sticks to the top edge on scroll.
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  min-height: $site-header-height;
+  background-color: $navbar-bg;
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid $border-color;
+}
+
+// Centred content row — shares the fluid width + horizontal padding of
+// `.blog-page`, so the brand and menu line up with the article. Fluid: it
+// scales smoothly with the viewport up to the shared cap, with no width steps.
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: .5rem .75rem;
+}
+
+// --- Brand -----------------------------------------------------------------
+.site-nav__brand,
+.site-nav__brand:visited,
+.site-nav__brand:hover,
+.site-nav__brand:focus {
+  color: $navbar-brand-color;
+  text-decoration: none;
+}
+.site-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.site-nav__logo { max-width: 100px; }
+
+.site-nav__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+// --- Toggle (hamburger) ----------------------------------------------------
+.site-nav__toggle {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid $navbar-toggler-border-color;
+  border-radius: .375rem;
+  cursor: pointer;
+}
+
+.site-nav__toggle-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice('' + $navbar-toggler-icon-color, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// --- Collapsible menu ------------------------------------------------------
+// JS toggles `.is-open` on #site-menu. Below lg the menu opens/closes over a
+// calm 0.5s ease curve: grid-template-rows animates 0fr <-> 1fr, which
+// resolves to the exact content height. At lg+ the menu is always open.
+.site-nav__menu {
+  flex-basis: 100%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition: grid-template-rows .5s ease-in-out, opacity .5s ease-in-out,
+    visibility 0s linear .5s;
+}
+.site-nav__menu.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition: grid-template-rows .5s ease-in-out, opacity .5s ease-in-out,
+    visibility 0s linear 0s;
+}
+.site-nav__menu > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+// Honour users who prefer reduced motion — show/hide instantly
+@media (prefers-reduced-motion: reduce) {
+  .site-nav__menu,
+  .site-nav__menu.is-open { transition: none; }
+}
+
+.site-nav__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.site-nav__link,
+.site-nav__link:visited {
+  display: block;
+  padding: .5rem 1rem;
+  color: $nav-link-color;
+  text-decoration: none;
+}
+.site-nav__link:hover,
+.site-nav__link:focus { color: $nav-link-hover-color; }
+
+// Phone CTA — hidden in the collapsed mobile menu, shown inline from lg up.
+.site-nav__cta { display: none; }
+
+// --- Desktop layout (lg and up) --------------------------------------------
+@media (min-width: $bp-lg) {
+  .site-nav { flex-wrap: nowrap; }
+
+  .site-nav__toggle { display: none; }
+
+  .site-nav__menu {
+    display: flex;
+    align-items: center;
+    flex-basis: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+  .site-nav__menu > * { overflow: visible; }
+
+  .site-nav__list {
+    flex-direction: row;
+    margin-left: auto;          // push the menu to the right
+  }
+  .site-nav__link {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+
+  .site-nav__cta { display: inline-block; }
+}
+
+// --- Small-screen tweaks ---------------------------------------------------
+@media (max-width: 520px) {
+  .site-header { box-shadow: 0 0 10px $navbar-shadow; }
+  .site-nav__logo { max-width: 75px; }
+  .site-nav__title { font-size: 1rem; }
+}
+
+// --- Footer ----------------------------------------------------------------
+// Sits inside `.blog-page`, so it inherits the same fluid width + padding as
+// the article — its top border lines up with the content edges.
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+}
