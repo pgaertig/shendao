@@ -1,11 +1,16 @@
-// --- Site chrome — header (navbar) + footer --------------------------------
-// Semantic, hand-written replacement for the Bootstrap-derived navbar on blog
-// pages. Named generically (`.site-*`) so the homepages can adopt it later.
+// --- Site chrome — page wrapper, header (navbar) + footer -------------------
+// Semantic, hand-written replacement for the Bootstrap-derived navbar.
+// Shared by every page (the blog layout and both homepages).
 
-// The blog header is `position: sticky`, so it sits in normal flow and needs
-// no body offset. Cancel the global fixed-navbar `body { padding-top }` from
-// _base.scss (the homepages still use the old fixed navbar and need it).
-body.blog { padding-top: 0; }
+// Centred page wrapper — one fluid width cap, shared with the navbar below, so
+// the content, navbar and footer edges line up at every viewport width.
+.page {
+  width: 100%;
+  max-width: $content-max-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.5rem .75rem 2.5rem;
+}
 
 // --- Header bar ------------------------------------------------------------
 // Full-bleed translucent, blurred bar; sticks to the top edge on scroll.
@@ -20,8 +25,8 @@ body.blog { padding-top: 0; }
 }
 
 // Centred content row — shares the fluid width + horizontal padding of
-// `.blog-page`, so the brand and menu line up with the article. Fluid: it
-// scales smoothly with the viewport up to the shared cap, with no width steps.
+// `.page`, so the brand and menu line up with the content. Fluid: it scales
+// smoothly with the viewport up to the shared cap, with no width steps.
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -50,6 +55,7 @@ body.blog { padding-top: 0; }
 .site-nav__logo { max-width: 100px; }
 
 .site-nav__title {
+  margin: 0;                 // the homepages' brand is an <h1> — drop its margin
   font-size: 1.25rem;
   font-weight: 500;
 }
@@ -165,8 +171,8 @@ body.blog { padding-top: 0; }
 }
 
 // --- Footer ----------------------------------------------------------------
-// Sits inside `.blog-page`, so it inherits the same fluid width + padding as
-// the article — its top border lines up with the content edges.
+// Sits inside `.page`, so it inherits the same fluid width + padding as the
+// content — its top border lines up with the content edges.
 .site-footer {
   margin-top: 3rem;
   padding-top: 1rem;

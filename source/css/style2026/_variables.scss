@@ -47,8 +47,7 @@ $bp-xxl: 1400px;
 
 // Layout
 $gutter:        1.5rem; // grid gutter (Bootstrap --bs-gutter-x)
-$navbar-height: 80px;   // fixed-navbar offset applied to <body> (homepages)
-$site-header-height: 106px; // sticky blog header — used for the sidebar sticky offset
+$site-header-height: 106px; // sticky header height — used for the sidebar sticky offset
 $content-max-width:  1140px; // shared fluid cap: page content + navbar + footer
 
 // Spacing scale (Bootstrap: 0..5)

@@ -164,13 +164,17 @@
         document.head.appendChild(slScript);
     });
 
-    document.addEventListener("click", function(event) {
-        if (event.target.classList.contains("toggler")) {
-            document.getElementById("navbarNav").classList.toggle("show");
-        } else if (event.target.classList.contains("nav-link")) {
-            document.getElementById("navbarNav").classList.remove("show");
-        } else if (event.target.classList.contains("logo")) {
-            document.getElementById("navbarNav").classList.remove("show");
+    document.addEventListener("click", function (event) {
+        var menu = document.getElementById("site-menu");
+        if (!menu) return;
+        var toggle = event.target.closest(".site-nav__toggle");
+        if (toggle) {
+            var open = menu.classList.toggle("is-open");
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        } else if (event.target.closest(".site-nav__link") || event.target.closest(".site-nav__brand")) {
+            menu.classList.remove("is-open");
+            var btn = document.querySelector(".site-nav__toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
         }
     });
 

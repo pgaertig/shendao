@@ -3,59 +3,42 @@ layout: root
 priority: 1
 ---
 
-<div class="container py-4">
-  <div class="container fixed-top border-bottom">
-  <header class="">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid p-0">
-        <a class="navbar-brand" href="#">
-          <img id="logo" class="logo" src="logo2.svg" alt="ShenDao" width="90" height="90" />
-          <h1 class="text-wrap">Akupunktura &middot; Poznań</h1>
-        </a>
-        <button  class="toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Rozwiń menu">
-          <span class="toggler navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto mb-2 pe-4 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#how-it-works">Jak to działa?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#visit">Wizyta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#o-mnie">O mnie</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Kontakt</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="en/"><span>🇺🇸</span><span>🇬🇧</span><span class="no-mobile">English</span></a>
-            </li>
-          </ul>
-          <a id="mtel" href="tel:600704120" class="btn btn-primary d-none d-lg-inline"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
-          </svg> 600 704 120</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-  </div>
-</div>
-<div class="container py-4">
+<header class="site-header">
+  <nav class="site-nav" aria-label="Menu główne">
+    <a class="site-nav__brand" href="#">
+      <img class="site-nav__logo" src="logo2.svg" alt="ShenDao" width="90" height="90" />
+      <span class="site-nav__title">Akupunktura &middot; Poznań</span>
+    </a>
+    <button class="site-nav__toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Rozwiń menu">
+      <span class="site-nav__toggle-icon"></span>
+    </button>
+    <div class="site-nav__menu" id="site-menu">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="#how-it-works">Jak to działa?</a></li>
+        <li><a class="site-nav__link" href="#visit">Wizyta</a></li>
+        <li><a class="site-nav__link" href="#o-mnie">O mnie</a></li>
+        <li><a class="site-nav__link" href="#contact">Kontakt</a></li>
+        <li><a class="site-nav__link" href="en/"><span>🇺🇸</span><span>🇬🇧</span><span class="no-mobile">English</span></a></li>
+      </ul>
+      <a id="mtel" href="tel:600704120" class="site-nav__cta btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
+      </svg> 600 704 120</a>
+    </div>
+  </nav>
+</header>
+<div class="page">
   <main>
-  <div class="row align-items-md-stretch">
-    <div class="col-lg-6 mb-3">
+  <div class="cols-lg mb-3">
+    <div>
       <div class="bg-body-tertiary rounded-3 h-100 d-flex justify-content-center align-items-center">
-      <div class="pt-3 ps-3 pe-3 text-center ">
+      <div class="p-3 text-center">
         <div id="en-bar" class="fs-6 d-none" lang="en">
           <div>🇺🇸🇬🇧</div>
           I speak English! Please see<br/> <a href="en/">English version of my website</a>.
         </div>
-        <p class="fs-5">
+        <h1 class="hero-title">
           Cześć! Jestem Magda i zapraszam Cię do mojego kameralnego gabinetu akupunktury w Poznaniu przy Rynku Wildeckim. Umów wizytę:
-        </p>
+        </h1>
         <a id="calendesk" href="https://shendao.calendesk.net" class="btn btn-primary btn-lg no-wrap mb-1 calendesk" type="button">
           <span class=""><%= partial('partials/calendar_icon.erb') %></span> Zarezerwuj online</a>
         <br/>
@@ -63,7 +46,7 @@ priority: 1
       </div>
       </div>
     </div>
-    <div class="col-lg-6 mb-3 d-none d-lg-block">
+    <div class="d-none d-lg-block">
       <div class="h-100">
         <picture>
           <source media="(min-width: 992px)" srcset="aku2.webp">
@@ -80,9 +63,9 @@ priority: 1
      <a href="img/shendao_5.jpg" data-lightbox="gallery" data-title="Wejście do budynku" class=""><picture><source media="(max-width: 991.98px)" srcset="img/shendao_5_thumb_m.webp"><img src="img/shendao_5_thumb.webp" class="gali rounded" width="450" height="600" alt="Wejście do budynku" aria-label="Wejście do budynku" /></picture></a>
   </section>
 
-   <section id="how-it-works" class="row">
-     <h2>Akupunktura</h2>
-     <div class="col-md-6">
+   <section id="how-it-works" class="cols-md">
+     <h2>Moja akupunktura</h2>
+     <div>
        <h3>Na co pomaga?</h3>
        <p>Akupunktura jest uznaną przez Światową Organizację Zdrowia (WHO) metodą leczenia, rekomendowaną w ponad 100 wskazaniach, m.in.:</p>
        <ul>
@@ -100,7 +83,7 @@ priority: 1
          <li>praca z blizną po operacji.</li>
        </ul>
      </div>
-     <div class="col-md-6">
+     <div>
        <h3>Jak działa i czy jest bezpieczna?</h3>
        <p>
          Skuteczność i bezpieczeństwo stosowania akupunktury potwierdzają badania i publikacje naukowe. Działanie akupunktury odbywa się m.in. poprzez wpływ na układ nerwowy, pobudzenie syntezy neurohormonów (endorfiny, serotoniny), wzmocnienie układu odpornościowego.
@@ -117,9 +100,9 @@ priority: 1
     </div>
   </section>
 
-    <section id="visit" class="row">
+    <section id="visit" class="cols-md">
       <h2>Wizyta</h2>
-      <div class="col-md-6">
+      <div>
         <h3>Zabieg</h3>
       <p>
         Zabieg akupunkturowy polega na wprowadzaniu cienkich, jednorazowych, sterylnych igieł w określone punkty na ciele w celu przywrócenia swobodnego przepływu energii <i>Qi</i> w organiźmie.
@@ -144,10 +127,10 @@ priority: 1
           najczęściej zadawanymi pytaniami</a>.
       </p>
       </div>
-      <div class="col-md-6">
+      <div>
         <h3>Cennik</h3>
-        <div class="row mb-3">
-          <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="cols-sm mb-3">
+          <div>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Pierwsza wizyta</h4>
@@ -156,7 +139,7 @@ priority: 1
               <div class="card-footer">Trwa do godziny.</div>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div>
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Kolejna wizyta</h4>
@@ -175,9 +158,9 @@ priority: 1
       </div>
     </section>
 
-    <section id="o-mnie" class="row">
+    <section id="o-mnie" class="cols-md">
       <h2>O mnie</h2>
-      <div class="col-md-6">
+      <div>
       <h3>Moja ścieżka ShenDao</h3>
       <p>
         Pojęcie <i>Shen Dao</i> w medycynie chińskiej odnosi się do "Drogi Ducha" lub "Ścieżki Ducha". Termin ten składa się z dwóch znaków: <i>Shen</i>, co oznacza ducha, świadomość, czy też aspekty psychiczne istoty ludzkiej, oraz <i>Dao</i>, co tłumaczy się jako droga lub ścieżka.
@@ -196,7 +179,7 @@ priority: 1
       </p>
       </div>
 
-      <div class="col-md-6">
+      <div>
 
       <h3>Moja wiedza</h3>
       <p>
@@ -228,9 +211,9 @@ priority: 1
       </div>
     </section>
 
-    <section id="contact" class="row">
+    <section id="contact" class="cols-md">
       <h2>Kontakt</h2>
-      <div class="col-md-6">
+      <div>
       <p>
         <b>ShenDao - Akupunktura Magdalena Gaertig</b><br/>
         ul. Bergera 1A/1, 61-542 Poznań
@@ -262,17 +245,16 @@ priority: 1
           <li><img height="20" width="20" alt="Samochód:" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20px' viewBox='0 -960 960 960' width='20px' fill='%23000000'%3E%3Cpath d='M240-216v48q0 10.2-6.9 17.1-6.9 6.9-17.1 6.9h-48q-10.2 0-17.1-6.9-6.9-6.9-6.9-17.1v-312l78-195q7-21 25.6-33t41.4-12h382q22.8 0 41.4 12 18.6 12 25.6 33l78 195v312q0 10.2-6.9 17.1-6.9 6.9-17.1 6.9h-48q-10.2 0-17.1-6.9-6.9-6.9-6.9-17.1v-48H240Zm1-312h478l-48-120H289l-48 120Zm-25 72v168-168Zm96 132q20 0 34-14t14-34q0-20-14-34t-34-14q-20 0-34 14t-14 34q0 20 14 34t34 14Zm336 0q20 0 34-14t14-34q0-20-14-34t-34-14q-20 0-34 14t-14 34q0 20 14 34t34 14Zm-432 36h528v-168H216v168Z'/%3E%3C/svg%3E" /> Strefa płatnego parkowania przy ul. Bergera</li>
         </ul>
       </div>
-      <div class="col-md-6">
+      <div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1624.9968589305527!2d16.916620026953286!3d52.393186253738264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b5a31aab13b%3A0x3752f63fc6d62df1!2sShenDao%20-%20Akupunktura%20-%20Magdalena%20Gaertig!5e0!3m2!1sen!2spl!4v1736354184615!5m2!1sen!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 aria-label="Bergera 1A/1, Poznań"></iframe>
       </div>
     </section>
 
   </main>
-  <footer class="border-top pt-3">
+  <footer class="site-footer">
     <p>&copy; 2026 ShenDao | <a href="/polityka-prywatnosci.html">Polityka prywatności</a> | <a href="/blog/">Blog</a> | <a href="/blog/najczesciej-zadawane-pytania-akupunktura.html">FAQ</a></p>
   </footer>
-
 </div>
 
 <script defer="defer" async="async">

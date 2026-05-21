@@ -72,10 +72,6 @@
 // Flex alignment
 .justify-content-center { justify-content: center !important; }
 .align-items-center     { align-items: center !important; }
-.align-items-stretch    { align-items: stretch !important; }
-@media (min-width: $bp-md) {
-  .align-items-md-stretch { align-items: stretch !important; }
-}
 
 // Sizing
 .h-100 { height: 100% !important; }
