@@ -13,7 +13,8 @@ Static marketing website for **ShenDao Acupuncture clinic in Poznan, Poland**, b
 - All content and code changes should be made in `source/` or configuration files.
 - Use ERB templates for dynamic/static HTML generation.
 - CSS and JS are managed in their respective folders under `source/`.
-- When changing CSS, bump the `?YYYY-MM-DD` cache-buster query on the `style2026.css` link to the current date in `root.erb`, `blog.erb` and `en/index.html.erb`, and align the nginx preload header.
+- Asset cache-busting is automatic: `activate :asset_hash` in `config.rb` content-hashes CSS/JS/image filenames at build time and rewrites every reference. No manual cache-buster query and no nginx change when assets change.
+- Keep HTML semantic and propose simplifications of structure and stylesheets when possible.
 
 ## Automation
 ### CI/CD Workflow
@@ -73,7 +74,7 @@ middleman server            # Dev server at http://localhost:4567
   (the test crawls the live site, so changes must be deployed first)
 
 ## User instructions
-- instructions to edit content will be provided in Polish
+- instructions to edit content will be provided sometimes in Polish
 - fix small typos, orthographic errors, but do not change the meaning of the text
 
 ---

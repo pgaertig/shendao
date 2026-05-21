@@ -51,7 +51,15 @@ set :strip_index_file, true
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 configure :build do
-  activate :gzip
   activate :minify_css
+  # Content-hash asset filenames (style2026-abc123.css) and rewrite every
+  # reference — automatic cache-busting, no manual query string.
+  # Excluded: simple-lightbox.* (loaded via a JS string) and shendao-icon256.png
+  # (referenced by absolute URLs in og:image / JSON-LD) — asset_hash can rewrite
+  # neither, so those keep stable names.
+  activate :asset_hash,
+    exts: %w(.css .js .png .jpg .jpeg .gif .svg .webp),
+    ignore: [%r{simple-lightbox}, %r{shendao-icon256}]
+  activate :gzip
 #   activate :minify_javascript, compressor: Terser.new
 end
