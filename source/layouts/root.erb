@@ -31,33 +31,8 @@
   <link rel="preload" href="/img/shendao_3_thumb_m.webp" as="image" media="(max-width: 991.98px)" />
   <link rel="preload" href="/img/shendao_5_thumb_m.webp" as="image" media="(max-width: 991.98px)" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-9WL49ZGYL9"></script>
-  <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9WL49ZGYL9');
-      function gtag_report_conversion(url) {
-          var callback = function () {
-              if (typeof(url) != 'undefined') {
-                  window.location = url;
-              }
-          };
-          gtag('event', 'conversion', {
-              'send_to': ['AW-1041470776/35tWCJiVxoIaELiqzvAD'],
-              'event_callback': callback
-          });
-          return false;
-      }
-      function gtag_report_contact_view() {
-          gtag('event', 'contact_view', {
-              'send_to': ['G-9WL49ZGYL9']
-          });
-          return false;
-      }
-  </script>
   <meta name="msvalidate.01" content="BAE6F0B9DCF9B33F7179E04863392158" />
+  <!-- Google Analytics / Ads is set up and loaded (10s deferred) by /js/script2026.js -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -150,84 +125,6 @@
 </head>
 <body>
 <%= yield %>
+<script defer src="/js/script2026.js"></script>
 </body>
-
-<script async defer="defer">
-    document.addEventListener("DOMContentLoaded", function() {
-        const slScript = document.createElement('script');
-        slScript.src = 'js/simple-lightbox.min.js';
-        slScript.onload = function() {
-            new SimpleLightbox('.gal-1 a', { /* options */ });
-        };
-        document.head.appendChild(slScript);
-    });
-
-    document.addEventListener("click", function (event) {
-        var menu = document.getElementById("site-menu");
-        if (!menu) return;
-        var toggle = event.target.closest(".site-nav__toggle");
-        if (toggle) {
-            var open = menu.classList.toggle("is-open");
-            toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        } else if (event.target.closest(".site-nav__link") || event.target.closest(".site-nav__brand")) {
-            menu.classList.remove("is-open");
-            var btn = document.querySelector(".site-nav__toggle");
-            if (btn) btn.setAttribute("aria-expanded", "false");
-        }
-    });
-
-    // gtag with href value as param if gtag method is available
-    if (typeof gtag === 'function') {
-        document.querySelectorAll('.gtag').forEach((el) => {
-            el.addEventListener('click', () => {
-                try{
-                    //get id of element
-                    navigator.sendBeacon('/touch.json?a=' + el.id);
-                    return gtag_report_conversion(el.href);
-                } catch (e) {
-                    console.error('gtag', e);
-                }
-            });
-        });
-        console.log('gtag installed');
-    } else {
-        console.log('gtag not available');
-    }
-
-    document.querySelectorAll('.calendesk').forEach((el) => {
-        el.addEventListener('click', () => {
-            try{
-                navigator.sendBeacon('/touch.json?a=' + el.id);
-            } catch (e) {
-                console.error('calendesk touch', e);
-            }
-        });
-    });
-
-
-    /** Send request to server /contact when user viewport shows contact, do it once then detach the handler, all in try/catch to not interrupt user flow.
-     * Generate number and keep localStorage then append that number to touch.json param "n=number". Use number from localStorage if exists.
-     * */
-    try {
-        const contact = document.getElementById('contact');
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    observer.disconnect();
-                    const n = localStorage.getItem('touch') || Math.floor(Math.random() * 1000000);
-                    localStorage.setItem('touch', n);
-                    navigator.sendBeacon('/touch.json?n=' + n);
-                    try {
-                        gtag_report_contact_view();
-                    } catch (e) {
-                        console.error('gtag', e);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-        observer.observe(contact);
-    } catch (e) {
-        console.error('Touch', e);
-    }
-</script>
 </html>

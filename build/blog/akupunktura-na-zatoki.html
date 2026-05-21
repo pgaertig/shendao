@@ -61,26 +61,7 @@
     }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WL49ZGYL9"></script>
-  <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-9WL49ZGYL9');
-          function gtag_report_conversion(url) {
-                  var callback = function () {
-                          if (typeof(url) != 'undefined') {
-                                  window.location = url;
-                          }
-                  };
-                  gtag('event', 'conversion', {
-                          'send_to': ['AW-1041470776/35tWCJiVxoIaELiqzvAD'],
-                          'event_callback': callback
-                  });
-                  return false;
-          }
-  </script>
+  <!-- Google Analytics / Ads is set up and loaded (10s deferred) by /js/script2026.js -->
 </head>
 <body>
 <header class="site-header">
@@ -189,39 +170,6 @@
   </footer>
 </div>
 
-<script defer="defer">
-        document.addEventListener("click", function (event) {
-                var menu = document.getElementById("site-menu");
-                if (!menu) return;
-                var toggle = event.target.closest(".site-nav__toggle");
-                if (toggle) {
-                        var open = menu.classList.toggle("is-open");
-                        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-                } else if (event.target.closest(".site-nav__link") || event.target.closest(".site-nav__brand")) {
-                        menu.classList.remove("is-open");
-                        var btn = document.querySelector(".site-nav__toggle");
-                        if (btn) btn.setAttribute("aria-expanded", "false");
-                }
-        });
-
-        // gtag with href value as param if gtag method is available
-        if (typeof gtag === 'function') {
-                document.querySelectorAll('.gtag').forEach((el) => {
-                        el.addEventListener('click', () => {
-                                try{
-                                        //get id of element
-                                        navigator.sendBeacon('/touch.json?a=' + el.id);
-                                        return gtag_report_conversion(el.href);
-                                } catch (e) {
-                                        console.error('gtag', e);
-                                }
-                        });
-                });
-                console.log('gtag installed');
-        } else {
-                console.log('gtag not available');
-        }
-
-</script>
+<script defer src="/js/script2026-a74c32eb.js"></script>
 </body>
 </html>

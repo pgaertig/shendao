@@ -223,15 +223,6 @@ priority: 1
         <a href="https://www.facebook.com/shendao.poznan/" target="_blank" rel="noopener"><img src="img/facebook-shendao.webp" class="img-fluid" width="400" height="71" loading="lazy" alt="ShenDao Akupunktura Poznań na Facebooku" /></a><br/>
       </p>
       </address>
-      <script defer="defer">
-        var emailLinks = document.getElementsByClassName('email');
-        for (i = 0; i < emailLinks.length; i++) {
-          var ctrl = emailLinks[i];
-          var email = ctrl.getAttribute('data-email') +  '@gmail.com';
-          ctrl.href= 'mailto:' + email;
-          ctrl.innerText = email;
-        }
-      </script>
         <section>
         <h3>Dojazd</h3>
         <ul>
@@ -257,15 +248,3 @@ priority: 1
     </ul>
   </footer>
 </div>
-
-<script defer="defer" async="async">
-  //Check if browser's user setting lists Polish language
-  try {
-    if (!navigator.language.includes('pl') && !navigator.languages.some(lang => lang.startsWith('pl'))) {
-      document.getElementById('en-bar').classList.add('d-sm-block');
-      navigator.sendBeacon('/touch.json?l=' + navigator.languages.join(','));
-    }
-  } catch (e) {
-    console.error('Error checking browser language settings:', e);
-  }
-</script>

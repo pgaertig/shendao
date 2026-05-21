@@ -28,14 +28,7 @@
   <link rel="preload" href="/img/shendao_3_thumb_m-7185b775.webp" as="image" media="(max-width: 991.98px)" />
   <link rel="preload" href="/img/shendao_5_thumb_m-c8f67265.webp" as="image" media="(max-width: 991.98px)" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-9WL49ZGYL9"></script>
-  <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9WL49ZGYL9');
-  </script>
+  <!-- Google Analytics / Ads is set up and loaded (10s deferred) by /js/script2026.js -->
 </head>
 <body>
 <header class="site-header">
@@ -237,15 +230,6 @@
 
         </p>
         </address>
-        <script>
-          var emailLinks = document.getElementsByClassName('email');
-          for (i = 0; i < emailLinks.length; i++) {
-            var ctrl = emailLinks[i];
-            var email = ctrl.getAttribute('data-email') +  '@gmail.com';
-            ctrl.href= 'mailto:' + email;
-            ctrl.innerText = email;
-          }
-        </script>
       </div>
       <div>
         <h3 class="d-lg-none">Location</h3>
@@ -267,31 +251,7 @@
     <p>&copy; 2026 ShenDao</p>
   </footer>
 </div>
+<script defer src="/js/script2026-a74c32eb.js"></script>
 </body>
-
-
-<script async defer="defer">
-    document.addEventListener("DOMContentLoaded", function() {
-        const slScript = document.createElement('script');
-        slScript.src = '/js/simple-lightbox.min.js';
-        slScript.onload = function() {
-            new SimpleLightbox('.gal-1 a', { /* options */ });
-        };
-        document.head.appendChild(slScript);
-    });
-
-    document.addEventListener("click", function (event) {
-        var menu = document.getElementById("site-menu");
-        if (!menu) return;
-        var toggle = event.target.closest(".site-nav__toggle");
-        if (toggle) {
-            var open = menu.classList.toggle("is-open");
-            toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        } else if (event.target.closest(".site-nav__link") || event.target.closest(".site-nav__brand")) {
-            menu.classList.remove("is-open");
-            var btn = document.querySelector(".site-nav__toggle");
-            if (btn) btn.setAttribute("aria-expanded", "false");
-        }
-    });
-</script>
+</html>
 </html>
