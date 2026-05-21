@@ -9,7 +9,7 @@
   max-width: $content-max-width;
   margin-right: auto;
   margin-left: auto;
-  padding: 1.5rem .75rem 2.5rem;
+  padding: 1.5rem .75rem 1rem;
 }
 
 // --- Header bar ------------------------------------------------------------
@@ -55,7 +55,6 @@
 .site-nav__logo { max-width: 100px; }
 
 .site-nav__title {
-  margin: 0;                 // the homepages' brand is an <h1> — drop its margin
   font-size: 1.25rem;
   font-weight: 500;
 }
@@ -160,7 +159,10 @@
     padding-left: .5rem;
   }
 
-  .site-nav__cta { display: inline-block; }
+  .site-nav__cta {
+    display: inline-block;
+    margin-left: 1rem;          // breathing room after the last menu item
+  }
 }
 
 // --- Small-screen tweaks ---------------------------------------------------
@@ -172,9 +174,31 @@
 
 // --- Footer ----------------------------------------------------------------
 // Sits inside `.page`, so it inherits the same fluid width + padding as the
-// content — its top border lines up with the content edges.
+// content — its top border lines up with the content edges. Lays the copyright
+// and the link list in a row; when the link list no longer fits it wraps to
+// the next line as a whole.
 .site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .25rem 1rem;            // row gap when wrapped, column gap copyright↔links
   margin-top: 3rem;
   padding-top: 1rem;
   border-top: 1px solid $border-color;
+}
+.site-footer p { margin: 0; }   // .page bottom padding is the gap below
+
+// Footer link list — an atomic group (never breaks mid-list). Dots separate the
+// items as leading `::before`s, so there is never a trailing dot; there is no
+// dot before the first link, so a wrapped list starts clean on its own line.
+.site-footer__links {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer__links li:not(:first-child)::before {
+  content: "·";
+  margin: 0 .5rem;
 }

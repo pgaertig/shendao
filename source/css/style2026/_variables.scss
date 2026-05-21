@@ -42,13 +42,8 @@ $card-cap-bg:                 $light;   // card footer background
 $bp-sm:  576px;
 $bp-md:  768px;
 $bp-lg:  992px;
-$bp-xl:  1200px;
-$bp-xxl: 1400px;
 
 // Layout
 $gutter:        1.5rem; // grid gutter (Bootstrap --bs-gutter-x)
 $site-header-height: 106px; // sticky header height — used for the sidebar sticky offset
 $content-max-width:  1140px; // shared fluid cap: page content + navbar + footer
-
-// Spacing scale (Bootstrap: 0..5)
-$spacers: (0: 0, 1: .25rem, 2: .5rem, 3: 1rem, 4: 1.5rem, 5: 3rem);

@@ -12,3 +12,7 @@
 @import "style2026/components";
 @import "style2026/site";
 @import "style2026/blog";
+
+// Third-party — SimpleLightbox 2.14.3 (gallery), vendored as a partial so it
+// bundles into this stylesheet instead of loading as a separate request.
+@import "style2026/simple-lightbox";

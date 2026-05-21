@@ -20,9 +20,9 @@
 // Left column — the post itself
 .blog-article { min-width: 0; }   // keep long content inside the grid track
 
-// Post title — the article's <h1>. Overrides the global `h1` (display:inline,
-// font-size:1em — that rule is kept for the homepages' navbar brand). Sits flush
-// with the top of the column; subsection headings stay as the global <h2>.
+// Article headings step down the primary scale — <h1> darkest, <h2> dark,
+// <h3> base primary. The <h1> also overrides the global inline `h1` (kept for
+// the homepages' navbar brand) and sits flush with the top of the column.
 .blog-article h1 {
   display: block;
   margin-top: 0;
@@ -30,12 +30,16 @@
   padding-bottom: .2rem;
   font-size: 2.25rem;
   line-height: 1.2;
+  color: $primary-darker;
   border-bottom: 2px solid $light;
 }
+.blog-article h2 { color: $primary-dark; }
+.blog-article h3 { color: $primary; }
 
 // Optional post subtitle — the `subtitle` front-matter field, rendered as <h2>
-// by the blog layout. Subordinate to the title; not a content section heading.
-.blog-article__subtitle {
+// by the blog layout. Subordinate to the title; not a content section heading,
+// so it keeps the muted tone — the qualified selector outranks `.blog-article h2`.
+.blog-article h2.blog-article__subtitle {
   margin-top: 0;
   margin-bottom: 1.5rem;
   padding-bottom: .2rem;

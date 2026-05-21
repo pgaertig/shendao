@@ -10,21 +10,21 @@
   gap: $gutter;
 }
 
-// A section title (<h2>) spans both columns, above them, with blog-like air
-// before it (3.5rem — the global <h2> top margin).
+// A section title (<h2>) spans both columns, above them, with 2rem of air
+// before it (the homepages override the global 3.5rem <h2> top margin). It
+// takes the darkest primary shade.
 .cols-sm > h2,
 .cols-md > h2,
 .cols-lg > h2 {
   grid-column: 1 / -1;
-  margin: 3.5rem 0 0;
+  margin: 2rem 0 0;
+  color: $primary-darker;
 }
 
-// Section sub-headings — the column sub-headings (<h3>) and the pricing-card
-// titles (<h4>) — take the muted tone, echoing the blog's dark title vs. muted
-// subtitle contrast.
-.cols-md :is(h3, h4) {
-  color: $muted;
-}
+// Section sub-headings step down the primary scale: the column <h3>s take the
+// dark primary, the pricing-card titles (<h4>) the base primary.
+.cols-md h3 { color: $primary-dark; }
+.cols-md h4 { color: $primary; }
 
 @media (min-width: $bp-sm) { .cols-sm { grid-template-columns: 1fr 1fr; } }
 @media (min-width: $bp-md) { .cols-md { grid-template-columns: 1fr 1fr; } }

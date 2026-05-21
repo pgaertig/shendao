@@ -15,6 +15,7 @@ Static marketing website for **ShenDao Acupuncture clinic in Poznan, Poland**, b
 - CSS and JS are managed in their respective folders under `source/`.
 - Asset cache-busting is automatic: `activate :asset_hash` in `config.rb` content-hashes CSS/JS/image filenames at build time and rewrites every reference. No manual cache-buster query and no nginx change when assets change.
 - Keep HTML semantic and propose simplifications of structure and stylesheets when possible.
+- Visual style should keep Zen vibes: clean, minimal, calming, with a touch of traditional Chinese aesthetics. Use whitespace effectively and avoid clutter.
 
 ## Automation
 ### CI/CD Workflow

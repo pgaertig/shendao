@@ -21,13 +21,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   margin-top: 0;
   margin-bottom: .5rem;
   font-weight: 500;
   line-height: 1.2;
 }
-h1 { display: inline; font-size: 1em; }   // brand heading — kept inline
+// Neutral base — the real <h1>s restyle themselves (.hero-title on the
+// homepages, .blog-article h1 on the blog).
+h1 { display: inline; font-size: 1em; }
 h2 {
   font-size: 2rem;
   margin-top: 3.5rem;
@@ -37,14 +39,16 @@ h2 {
 }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
 
 p { margin-top: 0; margin-bottom: 1rem; }
 
 ul, ol { margin-top: 0; margin-bottom: 1rem; padding-left: 2rem; }
 
 b, strong { font-weight: bolder; }
+
+address { font-style: normal; }   // contact block — drop the UA italic
+
+figure { margin: 0; }
 
 a {
   color: $primary-dark;
