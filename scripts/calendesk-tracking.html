@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  ShenDao — Rybbit tracking for the Calendesk booking page
+  ========================================================
+  Snippet pasted into the Calendesk panel (Settings / Tools -> custom scripts /
+  tracking codes, "head" section) for https://shendao.calendesk.net.
+
+  It is a SINGLE, attribute-free <script src> on purpose: Calendesk strips data-*
+  attributes off pasted script tags, so all config (Rybbit's data-site-id /
+  data-tag) is set from JS inside calendesk-rybbit.js instead, where it can't be
+  stripped. That file also injects the Rybbit loader itself.
+
+  The tracking logic lives in the website repo at source/js/calendesk-rybbit.js
+  and is served UNHASHED from https://shendao.poznan.pl/js/calendesk-rybbit.js
+  (see the asset_hash `ignore` list in config.rb). Edit behaviour there, not here.
+
+  The stable URL is served with a 1-year immutable cache (nginx), so after you
+  redeploy a changed calendesk-rybbit.js, BUMP the ?v= number below and re-paste
+  this into Calendesk to bust the cache.
+
+  Prerequisite: in the Rybbit dashboard, add `shendao.calendesk.net` as an allowed
+  domain on site `1c0b2b1f5d3e`, otherwise events from this subdomain are rejected.
+
+  Events emitted (funnel, tag = "calendesk") are documented in calendesk-rybbit.js.
+-->
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>ShenDao Calendesk tracking</title>
+
+<!-- Loads Rybbit + booking-flow observer (source: source/js/calendesk-rybbit.js).
+     Bump ?v= after redeploying a changed calendesk-rybbit.js (1-year immutable cache). -->
+<script src="https://shendao.poznan.pl/js/calendesk-rybbit.js?v=2" defer></script>
+</head>
+<body></body>
+</html>

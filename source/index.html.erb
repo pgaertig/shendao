@@ -38,7 +38,7 @@ priority: 1
         <h1 class="hero-title">
           Cześć! Jestem Magda i zapraszam Cię do mojego kameralnego gabinetu akupunktury w Poznaniu przy Rynku Wildeckim. Umów wizytę:
         </h1>
-        <a id="calendesk" href="https://shendao.calendesk.net" class="btn btn-primary btn-lg no-wrap mb-1 calendesk" type="button">
+        <a id="calendesk" href="https://shendao.calendesk.net" class="btn btn-primary btn-lg no-wrap mb-1 calendesk" type="button" data-rybbit-event="booking_click" data-rybbit-prop-location="hero">
           <span class=""><%= partial('partials/calendar_icon.erb') %></span> Zarezerwuj online</a>
         <br/>
         <%= partial('partials/contact_buttons') %>
@@ -53,10 +53,10 @@ priority: 1
   </div>
 
   <ul class="gal-1 pb-3">
-    <li><a href="img/shendao_4.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_4_thumb_m.webp"><img src="img/shendao_4_thumb.webp" class="gali" width="450" height="600" fetchpriority="high" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a></li>
-    <li><a href="img/shendao_2.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_2_thumb_m.webp"><img src="img/shendao_2_thumb.webp" class="gali" width="450" height="600" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a></li>
-    <li><a href="img/shendao_3.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_3_thumb_m.webp"><img src="img/shendao_3_thumb.webp" class="gali" width="450" height="600" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a></li>
-    <li><a href="img/shendao_5.jpg" data-lightbox="gallery" data-title="Wejście do budynku"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_5_thumb_m.webp"><img src="img/shendao_5_thumb.webp" class="gali" width="450" height="600" alt="Wejście do budynku" aria-label="Wejście do budynku" /></picture></a></li>
+    <li><a href="img/shendao_4.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_4"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_4_thumb_m.webp"><img src="img/shendao_4_thumb.webp" class="gali" width="450" height="600" fetchpriority="high" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a></li>
+    <li><a href="img/shendao_2.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_2"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_2_thumb_m.webp"><img src="img/shendao_2_thumb.webp" class="gali" width="450" height="600" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a></li>
+    <li><a href="img/shendao_3.jpg" data-lightbox="gallery" data-title="Zdjęcie gabinetu akupunktury" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_3"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_3_thumb_m.webp"><img src="img/shendao_3_thumb.webp" class="gali" width="450" height="600" alt="Zdjęcie gabinetu akupunktury" aria-label="Zdjęcie gabinetu akupunktury" /></picture></a></li>
+    <li><a href="img/shendao_5.jpg" data-lightbox="gallery" data-title="Wejście do budynku" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_5"><picture><source media="(max-width: 991.98px)" srcset="img/shendao_5_thumb_m.webp"><img src="img/shendao_5_thumb.webp" class="gali" width="450" height="600" alt="Wejście do budynku" aria-label="Wejście do budynku" /></picture></a></li>
   </ul>
 
    <section id="how-it-works" class="cols-md">
@@ -212,13 +212,13 @@ priority: 1
         ul. Bergera 1A/1, 61-542 Poznań
       </p>
       <p>
-        Wiadomość: <a id="isms" href="sms:+48600704120" class="gtag" type="button"><i class="bi bi-chat-dots"></i> SMS</a> | <a id="wa2" href="https://wa.me/48600704120" class="gtag" type="button"><i class="bi bi-whatsapp"></i> WhatsApp</a><br/>
-        Telefon: <a id="itel" href="tel:+48600704120" class="gtag">+48 600 704 120</a> (oddzwaniam jeśli nie odbiorę)
+        Wiadomość: <a id="isms" href="sms:+48600704120" class="gtag" type="button" data-rybbit-event="contact_click" data-rybbit-prop-method="sms" data-rybbit-prop-location="contact"><i class="bi bi-chat-dots"></i> SMS</a> | <a id="wa2" href="https://wa.me/48600704120" class="gtag" type="button" data-rybbit-event="contact_click" data-rybbit-prop-method="whatsapp" data-rybbit-prop-location="contact"><i class="bi bi-whatsapp"></i> WhatsApp</a><br/>
+        Telefon: <a id="itel" href="tel:+48600704120" class="gtag" data-rybbit-event="contact_click" data-rybbit-prop-method="phone" data-rybbit-prop-location="contact">+48 600 704 120</a> (oddzwaniam jeśli nie odbiorę)
       </p>
       <p>
-        Email: <a href="#" id="email" class="email gtag" data-email="shendao.poznan"></a><br/>
+        Email: <a href="#" id="email" class="email gtag" data-email="shendao.poznan" data-rybbit-event="contact_click" data-rybbit-prop-method="email" data-rybbit-prop-location="contact"></a><br/>
         Strona: <a href="https://shendao.poznan.pl">https://shendao.poznan.pl</a><br/>
-        Google: <a class="contact-google-card" href="https://www.google.com/maps?cid=3986519373955608049"><span class="rating">5.0 <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span> (7)</span></a><br/>
+        Google: <a class="contact-google-card" href="https://www.google.com/maps?cid=3986519373955608049"><span class="rating">5.0 <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span> (9)</span></a><br/>
         Facebook:
         <a href="https://www.facebook.com/shendao.poznan/" target="_blank" rel="noopener"><img src="img/facebook-shendao.webp" class="img-fluid" width="400" height="71" loading="lazy" alt="ShenDao Akupunktura Poznań na Facebooku" /></a><br/>
       </p>
