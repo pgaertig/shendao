@@ -101,7 +101,7 @@
     d = Date.parse(current_page.data.date_published.to_s)
     date_str = "#{d.day} #{pl_months[d.month - 1]} #{d.year}"
   %>
-      <p class="blog-article__date">Opublikowano: <%= date_str %></p>
+      <p class="blog-article__date">Zaktualizowano: <%= date_str %></p>
 <% end %>
 <%= yield %>
     </article>
