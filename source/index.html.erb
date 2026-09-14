@@ -29,26 +29,23 @@ priority: 1
 <div class="page">
   <main>
   <div class="cols-lg">
-    <div class="bg-body-tertiary rounded-3 d-flex justify-content-center align-items-center">
-      <div class="p-3 text-center">
-        <div id="en-bar" class="fs-6 d-none" lang="en">
-          <div>🇺🇸🇬🇧</div>
-          I speak English! Please see<br/> <a href="en/">English version of my website</a>.
-        </div>
+    <figure class="gal-1 gal-inline hero-portrait">
+      <a href="img/shendao_7.webp" data-lightbox="gallery" data-title="Magdalena Gaertig w gabinecie akupunktury" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_7"><img src="img/shendao_7.webp" fetchpriority="high" alt="Magdalena Gaertig w gabinecie akupunktury ShenDao" width="782" height="1166" /></a>
+    </figure>
+    <div class="bg-body-tertiary hero-card d-flex justify-content-center align-items-center">
+      <div class="p-3 text-center hero-box">
+        <p id="en-bar" class="fs-6 d-none" lang="en">
+          🇺🇸🇬🇧 Hi! I speak English. Please visit the <a href="en/">English page</a>.
+        </p>
         <h1 class="hero-title">
-          Cześć! Jestem Magda i zapraszam Cię do mojego kameralnego gabinetu akupunktury w Poznaniu przy Rynku Wildeckim. Umów wizytę przez:
+          Cześć! Jestem Magda i zapraszam Cię do mojego kameralnego gabinetu akupunktury w Poznaniu przy Rynku Wildeckim.
         </h1>
+        <p class="hero-lead">Umów wizytę przez:</p>
         <a id="calendesk" href="https://shendao.calendesk.net" class="btn btn-primary btn-lg no-wrap mb-1 calendesk" type="button" data-rybbit-event="booking_click" data-rybbit-prop-location="hero">
-          <span class=""><%= partial('partials/calendar_icon.erb') %></span> Kalendarz</a>
+          <span class=""><%= partial('partials/calendar_icon.erb') %></span> Kalendarz <%= partial('partials/chevron_right_icon.erb') %></a>
         <br/>
         <%= partial('partials/contact_buttons') %>
       </div>
-    </div>
-    <div class="d-none d-lg-block">
-      <picture>
-        <source media="(min-width: 992px)" srcset="aku2.webp">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" fetchpriority="high" class="img-fluid side-img" alt="Akupunktura" width="673" height="449" />
-      </picture>
     </div>
   </div>
 
@@ -124,6 +121,9 @@ priority: 1
       </p>
       </section>
       <section>
+        <figure class="gal-1 gal-inline">
+          <a href="img/shendao_6.jpg" data-lightbox="gallery" data-title="Zabieg akupunktury" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_6"><img src="img/shendao_6_thumb.webp" class="img-fluid" loading="lazy" decoding="async" width="800" height="536" alt="Zabieg akupunktury – wprowadzanie igły w punkt na dłoni pacjenta" /></a>
+        </figure>
         <h3>Cennik</h3>
         <div class="cols-sm mb-3">
           <div class="card">
@@ -202,6 +202,7 @@ priority: 1
         ul. Bergera 1A/1, 61-542 Poznań
       </p>
       <p>
+        Rezerwacje wizyt przez <a href="https://shendao.calendesk.net" class="calendesk" data-rybbit-event="booking_click" data-rybbit-prop-location="contact">Kalendarz</a>.<br/>
         Wiadomość: <a id="isms" href="sms:+48600704120" class="gtag" type="button" data-rybbit-event="contact_click" data-rybbit-prop-method="sms" data-rybbit-prop-location="contact"><i class="bi bi-chat-dots"></i> SMS</a> | <a id="wa2" href="https://wa.me/48600704120" class="gtag" type="button" data-rybbit-event="contact_click" data-rybbit-prop-method="whatsapp" data-rybbit-prop-location="contact"><i class="bi bi-whatsapp"></i> WhatsApp</a><br/>
         Telefon: <a id="itel" href="tel:+48600704120" class="gtag" data-rybbit-event="contact_click" data-rybbit-prop-method="phone" data-rybbit-prop-location="contact">+48 600 704 120</a> (oddzwaniam jeśli nie odbiorę)
       </p>

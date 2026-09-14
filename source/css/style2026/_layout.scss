@@ -28,4 +28,6 @@
 
 @media (min-width: $bp-sm) { .cols-sm { grid-template-columns: 1fr 1fr; } }
 @media (min-width: $bp-md) { .cols-md { grid-template-columns: 1fr 1fr; } }
-@media (min-width: $bp-lg) { .cols-lg { grid-template-columns: 1fr 1fr; } }
+// The hero puts a narrow portrait beside the welcome box, joined by the
+// gallery's 2px seam.
+@media (min-width: $bp-lg) { .cols-lg { grid-template-columns: 2fr 3fr; gap: 2px; } }

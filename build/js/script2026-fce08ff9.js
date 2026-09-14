@@ -122,7 +122,7 @@
     if (enBar &&
         !navigator.language.includes('pl') &&
         !navigator.languages.some(function (lang) { return lang.startsWith('pl'); })) {
-      enBar.classList.add('d-sm-block');
+      enBar.classList.remove('d-none');
       navigator.sendBeacon('/touch.json?l=' + navigator.languages.join(','));
     }
   } catch (e) {

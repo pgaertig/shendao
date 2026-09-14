@@ -14,9 +14,6 @@
 .d-none { display: none !important; }
 .d-flex { display: flex !important; }
 
-@media (min-width: $bp-sm) {
-  .d-sm-block { display: block !important; }   // toggled by the language-detect script
-}
 @media (min-width: $bp-lg) {
   .d-lg-none   { display: none !important; }
   .d-lg-inline { display: inline !important; }

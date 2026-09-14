@@ -23,6 +23,7 @@
   <link rel="alternate" hreflang="pl" href="https://shendao.poznan.pl/" />
   <link rel="alternate" hreflang="x-default" href="https://shendao.poznan.pl/" />
 
+  <link rel="preload" href="/img/shendao_7.webp" as="image" fetchpriority="high" />
   <link rel="preload" href="/logo2.svg" as="image" />
   <link rel="preload" href="/img/shendao_4_thumb_m.webp" as="image" media="(max-width: 991.98px)" fetchpriority="high" />
   <link rel="preload" href="/img/shendao_3_thumb_m.webp" as="image" media="(max-width: 991.98px)" />
@@ -69,11 +70,15 @@
   <main>
 
     <div class="cols-lg">
-      <div class="bg-body-tertiary rounded-3 d-flex justify-content-center align-items-center">
-        <div class="p-3 text-center">
+      <figure class="gal-1 gal-inline hero-portrait">
+        <a href="../img/shendao_7.webp" data-lightbox="gallery" data-title="Magdalena Gaertig at the acupuncture clinic" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_7"><img src="../img/shendao_7.webp" fetchpriority="high" alt="Magdalena Gaertig at the ShenDao acupuncture clinic" width="782" height="1166" /></a>
+      </figure>
+      <div class="bg-body-tertiary hero-card d-flex justify-content-center align-items-center">
+        <div class="p-3 text-center hero-box">
           <h1 class="hero-title">
-            Hi! I'm Magda and I invite you to my acupuncture clinic in Poznań, Poland. Please book an appointment via WhatsApp or SMS. I look forward to meeting you!
+            Hi! I'm Magda and I invite you to my acupuncture clinic in Poznań, Poland.
           </h1>
+          <p class="hero-lead">Please book an appointment via WhatsApp or SMS. I look forward to meeting you!</p>
           <span class="no-wrap d-none d-lg-inline fs-3 text-primary"><span class=""><%= partial('partials/whatsapp_icon.erb') %></span> <b>+48 600 704 120</b></span>
           <div class="d-lg-none">
             <a id="wa" href="https://wa.me/48600704120" class="btn btn-whatsapp no-wrap mb-1 gtag" type="button" data-rybbit-event="contact_click" data-rybbit-prop-method="whatsapp" data-rybbit-prop-location="hero"><%= partial('partials/whatsapp_icon.erb') %> WhatsApp</a>
@@ -82,12 +87,6 @@
             </svg>+48 600 704 120</a>
           </div>
         </div>
-      </div>
-      <div class="d-none d-lg-block">
-        <picture>
-          <source media="(min-width: 992px)" srcset="../aku2.webp">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" fetchpriority="high" class="img-fluid side-img" alt="Acupuncture" width="673" height="449" />
-        </picture>
       </div>
     </div>
 
@@ -146,6 +145,9 @@
         </p>
       </section>
       <section>
+        <figure class="gal-1 gal-inline">
+          <a href="../img/shendao_6.jpg" data-lightbox="gallery" data-title="Acupuncture treatment" data-rybbit-event="gallery_view" data-rybbit-prop-image="shendao_6"><img src="../img/shendao_6_thumb.webp" class="img-fluid" loading="lazy" decoding="async" width="800" height="536" alt="Acupuncture treatment – inserting a needle into a point on the patient's hand" /></a>
+        </figure>
         <h3>Pricing</h3>
         <div class="cols-sm mb-3">
           <div class="card">

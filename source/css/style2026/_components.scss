@@ -1,16 +1,54 @@
 // --- Site-specific components ---------------------------------------------
 
-// Desaturated hero side image
-.side-img { filter: grayscale(50%) contrast(1); }
-
-// Hero welcome line — the page <h1>. Keeps the look of the body paragraph it
-// replaced (no heading styling), so the change to <h1> is purely semantic.
+// Hero welcome line — the page <h1>, set larger in italics in the darkest
+// primary. The booking prompt below it (.hero-lead) keeps the body look,
+// separated by a wider gap.
 .hero-title {
   display: block;
+  margin: 0 0 1.5rem;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $primary-darker;
+}
+.hero-lead {
   margin: 0 0 1rem;
   font-size: 1.25rem;
-  font-weight: 400;
   line-height: 1.6;
+}
+
+// Hero booking buttons
+.hero-box .btn {
+  position: relative;
+  display: block;
+  margin-top: .25rem;
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: .5rem;
+
+  // Chevron pinned to the right edge of the full-width button
+  .bi-chevron-right {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+
+  @media (min-width: $bp-lg) {
+    display: inline-block;
+    margin-top: 0;
+
+    .bi-chevron-right {
+      position: static;
+      transform: none;
+    }
+  }
+}
+.hero-box > br {
+  display: none;
+
+  @media (min-width: $bp-lg) { display: inline; }
 }
 
 // Photo gallery — a <ul> of lightbox thumbnails sitting 2px apart; only the
@@ -51,6 +89,50 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+// Single in-text image that joins the gallery's lightbox group
+// without taking the strip layout
+.gal-1.gal-inline {
+  display: block;
+  height: auto;
+  margin: .5rem 0 1rem; // top lines up with the neighbouring column's <h3>
+
+  a { height: auto; }
+  img { border-radius: .375rem; }
+}
+
+// Hero portrait — the tall photo cropped around the face: a landscape strip
+// above the welcome box on mobile, a portrait column beside it on desktop.
+// Opens in the gallery lightbox like the strip photos.
+.hero-portrait {
+  &.gal-inline { margin: 0; }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 60% 25%;
+
+    @media (min-width: $bp-lg) { aspect-ratio: 5 / 4; }
+  }
+}
+
+// Hero welcome box. On desktop it joins the portrait like the gallery strip:
+// a 2px seam (see .cols-lg) with only the pair's outer corners rounded.
+.hero-card { border-radius: .375rem; }
+
+@media (min-width: $bp-lg) {
+  .gal-inline.hero-portrait img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .hero-card {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
 // Google rating stars
